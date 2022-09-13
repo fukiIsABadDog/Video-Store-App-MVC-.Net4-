@@ -1,0 +1,95 @@
+﻿
+body{
+    min-height: 100vh;
+    background:linear-gradient(to right top,#b6ff00,#00ffff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:1;
+    position:relative;
+   
+}
+
+.textBox {
+    background-color: white;
+    min-height: 80vh;
+    width: 100vh;
+    background: linear-gradient(to right bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.3));
+    border-radius: 40px;
+    position: relative;
+    z-index: 3;
+    backdrop-filter: blur(2rem)
+}
+.pic{
+    object-fit: cover;
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+    position: relative;
+    padding:1rem;
+    
+   
+}
+.banner {
+    
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    text-align: center;
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.6),rgba(255,255,255,0.2));
+    border-radius: inherit;
+}
+h1 {
+    font-size: 45px;
+    position: relative;
+    padding: 1rem;
+    margin-left: 100px;
+}
+.bioText{
+    font-size:20px;
+    padding-top:2rem;
+    padding-left:2rem;
+    padding-right:2rem;
+    padding-bottom:1rem;
+   
+}
+.careerText {
+    font-size: 20px;
+    padding-left:2rem;
+    padding-right:2rem;
+}
+.intake {
+    
+    font-size:20px;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+}
+.misc {
+    font-size:20px;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+}
+   
+#cylinder{
+    position:absolute;
+    z-index: 2;
+    top:10%;
+    right:10%;
+    height:500px;
+}
+#shape {
+    position: absolute;
+    z-index: 2;
+    bottom: 5%;
+    left: 10%;
+    
+}
+
+    
+
+
+  

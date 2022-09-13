@@ -1,0 +1,63 @@
+﻿@model string
+
+@{ 
+    ViewBag.Title = "About";
+}
+  
+<header>
+    <h2>@ViewBag.date</h2>
+    <h2>@Model</h2>
+</header>
+    <main>
+        <section class="textBox">
+            <div class="banner">
+                <img class="pic" src="/Images/biopicture.jpg" alt="bio picture" />
+                <h1>Meet the devoloper</h1>
+            </div>
+            <div class="bioText">
+                <p>
+                    <h3>About me</h3>
+                    My name is Justin.
+                    Welcome to my 1<sup>st</sup> web page!
+                    Unfortunatly the topic of this page is not very interesting but none the less we will make a go of it.
+                    I was born in New Orleans, moved to Virgina while I was in active duty with the Navy.
+                    I fell in love with Richmond at the time, I thought it was a very accessible city for young people so I stayed.
+                    Years later, I have started a family here, and now I am working on changing careers.
+                </p>
+            </div>
+            <div class="careerText">
+                <p>
+                    <h4>
+                        Career Objectives
+                    </h4>
+                    <ol>
+                        <li>
+                            Initially, find a workpalce that is both challanging but respects my off time.
+                            I like the "work hard, play hard approach"
+                        </li>
+                        <li>
+                            Gain experience in the industry
+                            then use it to move into a subfield that I find more interesting.
+                        </li>
+                        <li>Ultimately I may move into contracting work, as the self-employed life may suit me.</li>
+                    </ol>
+                </p>
+            </div>
+            <div class="intake">
+                <p>Please sign up for my email news letter for weekly updates on my life story!</p>
+                <form>
+                    First Name:<input type="text" name="firstName" />
+                    Last Name:<input type="text" name="lastName" />
+                    Email:<input type="email" name="email" />
+                </form>
+            </div>
+            <div class="misc">
+                <p>
+                    If this is the first time you have used a computer, and you are uncertain how you got here, <a href="https://en.wikipedia.org/wiki/Internet"> <b>click here!</b></a>
+                </p>
+            </div>
+        </section>
+        <img id="cylinder" src="/Images/Cylinder.png" />
+        <img id="shape" src="/Images/shape.png" />
+    </main>
+
