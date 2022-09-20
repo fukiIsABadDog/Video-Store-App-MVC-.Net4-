@@ -18,10 +18,20 @@ namespace _245_MVC_Project.Controllers
 
         public ActionResult About()
         {
-            var about = new About { Age = 30, FirstName = "Justin", LastName = "Ansardi",YearsExp = 1.5};
+            #region #3
 
+            //ViewBag.today = DateTime.Now.ToShortDateString();
+            //string name = "Justin";
+            //return View((object)name);
+            #endregion
 
+            #region #4
+
+            var about = new About { Age = 30, FirstName = "Justin", LastName = "Ansardi", YearsExp = 1.5 };
             return View(about);
+
+            #endregion
+
         }
 
         public ActionResult Contact()
