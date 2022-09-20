@@ -1,4 +1,4 @@
-﻿@model string
+﻿@model _245_MVC_Project.Models.About
 
 @{ 
     ViewBag.Title = "About";
@@ -6,7 +6,8 @@
   
 <header>
     <h2>@ViewBag.date</h2>
-    <h2>@Model</h2>
+    <h2>@Model.FirstName @Model.LastName </h2>
+    <h3>Age @Model.Age</h3> 
 </header>
     <main>
         <section class="textBox">
@@ -16,8 +17,8 @@
             </div>
             <div class="bioText">
                 <p>
-                    <h3>About me</h3>
-                    My name is Justin.
+                    <h3>About @Model.FirstName</h3>     
+                    <h4><i>Years programing ~ @Model.YearsExp</i></h4>
                     Welcome to my 1<sup>st</sup> web page!
                     Unfortunatly the topic of this page is not very interesting but none the less we will make a go of it.
                     I was born in New Orleans, moved to Virgina while I was in active duty with the Navy.
