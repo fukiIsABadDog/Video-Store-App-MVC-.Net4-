@@ -1,0 +1,17 @@
+﻿9/20
+{
+	-root index changes- 
+
+	Took the contact link off the nav menu
+	added random picture generator via url
+	added button links to new areas "school" & "inventory"
+
+	-added new areas-
+	
+	"School" & "Inventory"
+	added home controllers
+	added empty views
+
+
+
+}

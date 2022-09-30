@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "School Example";
+    Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="heading">School User Interface Example</h3>
+<nav class="navbar navbar-expand-lg navbar-dark bg-info " id="navbarColor01">
+    <ul class="nav navbar-nav nav-link navbar-static-top">
+        <li>@Html.ActionLink("School Home", "Index", "School", new { area = "Inventory" }, null)</li>
+        <li>@Html.ActionLink("Facilities", "Index", "Classrooms", new { area = "Inventory" }, null)</li>
+        <li>@Html.ActionLink("Scheduling", "Index", "Courses", new { area = "Inventory" }, null)</li>
+        <li>@Html.ActionLink("Admin", "Index", "Semesters", new { area = "Inventory" }, null)</li>
+    </ul>
+</nav>
+
+
+
+<div class="container body-content">
+    @RenderBody()
+    <hr />
+</div>
+
+
+
+

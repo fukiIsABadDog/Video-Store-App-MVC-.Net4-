@@ -168,6 +168,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Inventory\Controllers\InventoryHomeController.cs" />
+    <Compile Include="Areas\Inventory\InventoryAreaRegistration.cs" />
+    <Compile Include="Areas\School\Controllers\SchoolHomeController.cs" />
+    <Compile Include="Areas\School\SchoolAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -185,6 +189,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChangeLog.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -195,11 +200,21 @@
     <Content Include="Content\Site.css" />
     <Content Include="HTML\Styles.css" />
     <Content Include="HTML\aboutMe.html" />
+    <Content Include="Images\88188-geometry-color-triangle-polygon-symmetry-free-hq-image.png" />
     <Content Include="Images\biopicture.jpg" />
     <Content Include="Images\Cylinder.png" />
     <Content Include="Images\shape.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Inventory\Views\web.config" />
+    <Content Include="Areas\Inventory\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Inventory\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\School\Views\Shared\_School.cshtml" />
+    <Content Include="Areas\School\Views\web.config" />
+    <Content Include="Areas\School\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\School\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\School\Views\SchoolHome\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\InventoryHome\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -223,7 +238,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -251,6 +265,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Inventory\Data\" />
+    <Folder Include="Areas\School\Data\" />
+    <Folder Include="Views\Inventory\" />
+    <Folder Include="Views\School\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
