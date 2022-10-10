@@ -1,5 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
+using System.Configuration;
+using System.Web.Configuration;
 
 namespace _245_MVC_Project
 {
@@ -23,7 +25,7 @@ namespace _245_MVC_Project
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      $"~/Content/{WebConfigurationManager.AppSettings["BootStrap"]}.css",
                       "~/Content/site.css"));
         }
     }

@@ -1,5 +1,4 @@
-﻿9/20
-{
+﻿9/20{
 	-root index changes- 
 
 	Took the contact link off the nav menu
@@ -12,6 +11,12 @@
 	added home controllers
 	added empty views
 
+}
 
+10/4{
+	-changed bootstrap theme-
+
+	added new css file from bootswatch "Cerulean"
+	changed web.config and bundleconfig.cs to dynamically reference themes
 
 }
