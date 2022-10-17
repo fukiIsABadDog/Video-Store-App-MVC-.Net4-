@@ -10,12 +10,16 @@
     <h4>Change your account settings</h4>
     <hr />
     <dl class="dl-horizontal">
+        @* this would be the most appropriate place to display password,
+            I do not know how to access it*@
         <dt>Password:</dt>
         <dd>
             [
             @if (Model.HasPassword)
             {
+                
                 @Html.ActionLink("Change your password", "ChangePassword")
+                
             }
             else
             {

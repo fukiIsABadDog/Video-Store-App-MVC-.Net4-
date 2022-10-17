@@ -1,4 +1,4 @@
-﻿@using _245_MVC_Project.Models
+﻿    @using _245_MVC_Project.Models
 @model LoginViewModel
 @{
     ViewBag.Title = "Log in";
@@ -8,6 +8,7 @@
 <div class="row">
     <div class="col-md-8">
         <section id="loginForm">
+            
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
@@ -47,7 +48,7 @@
                 @* Enable this once you have account confirmation enabled for password reset functionality
                     <p>
                         @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                    </p>*@
+                    </p>*@  
             }
         </section>
     </div>
@@ -57,6 +58,34 @@
         </section>
     </div>
 </div>
+
+
+@*This is not working, I do not understand how to access the data*@
+
+ <div class=" table-striped">
+     <table class="table">
+         <thead>
+             <tr>
+                 @*<th scope="col">#</th>*@
+                 <th scope="col">Email</th>
+                 <th scope="col">Password</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr>
+                 @*<th scope="row">1</th>*@
+                 @if (Model != null)
+                 {
+                    // <td>@Html.DisplayText()</td>
+                    // <td>@ViewBag.Password</td>
+
+                 }
+
+             </tr>
+         </tbody>
+     </table>
+</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

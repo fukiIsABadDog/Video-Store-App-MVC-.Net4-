@@ -70,6 +70,9 @@ namespace _245_MVC_Project.Controllers
         {
             if (!ModelState.IsValid)
             {
+                //ViewBag.PassWord = model.Password;
+                // this did not work to display the password on the login
+
                 return View(model);
             }
 
@@ -79,7 +82,7 @@ namespace _245_MVC_Project.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                   return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

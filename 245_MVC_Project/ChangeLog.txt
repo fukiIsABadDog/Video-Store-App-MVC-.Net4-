@@ -20,3 +20,32 @@
 	changed web.config and bundleconfig.cs to dynamically reference themes
 
 }
+
+10/17{
+	-database changes-
+
+	added dotnet.reynolds db connection
+	added Sales role to AspNetRoles
+	added user to sales role via AspNetUserRoles
+
+	- changes in program design-
+
+	added Sales area
+	added Sales controller with two action methods
+	added two Sales views
+
+	-security changes-
+
+	added Sales role only authorization to SalesOrder view
+
+	-other notes-
+	
+	I could not figure out how to pass the LoginViewModel information
+		back to the Login view for display
+
+		-viewbags did not work
+		-direct references to the model did not work
+		
+	Perhaps it would require a call to the DB.. I am not sure how to do that without EF
+
+}
