@@ -49,3 +49,17 @@
 	Perhaps it would require a call to the DB.. I am not sure how to do that without EF
 
 }
+
+10/23{
+
+	-Added data model and created basic scaffolding-
+
+		added ado.net entity model to solution in seperate project folder
+		added scaffolding to 245_MVC_Project
+		-in new views-
+			1) changed data field display names
+					by created partial classes and modifing metadata inside of ITP245-Model.Inventory.cs
+					for better readabilty 
+			2) modified @viewbag.title to better refect page type
+
+}

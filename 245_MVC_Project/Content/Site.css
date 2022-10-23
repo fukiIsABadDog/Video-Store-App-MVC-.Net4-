@@ -50,6 +50,18 @@ body {
     backdrop-filter: blur(2rem)
 }
 
+
+.textBox2 {
+    background-color: white;
+    min-height: stretch;
+    width: stretch;
+    background: linear-gradient(to right bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.3));
+    border-radius: 40px;
+    position: relative;
+    z-index: 3;
+    backdrop-filter: blur(2rem)
+}
+
 .pic {
     object-fit: cover;
     height: 125px;

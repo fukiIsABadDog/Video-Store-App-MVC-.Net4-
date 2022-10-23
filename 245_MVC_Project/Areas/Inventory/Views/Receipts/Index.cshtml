@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ITP245_Model.Receipt>
+
+@{
+    ViewBag.Title = "Receipts";
+    Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReceiptDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PoItem.PoItemId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReceiptDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PoItem.PoItemId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ReceiptId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ReceiptId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ReceiptId })
+        </td>
+    </tr>
+}
+
+</table>

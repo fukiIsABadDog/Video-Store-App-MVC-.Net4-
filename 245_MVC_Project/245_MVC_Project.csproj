@@ -168,7 +168,14 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Inventory\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\Inventory\Controllers\InventoryHomeController.cs" />
+    <Compile Include="Areas\Inventory\Controllers\ItemsController.cs" />
+    <Compile Include="Areas\Inventory\Controllers\PoItemsController.cs" />
+    <Compile Include="Areas\Inventory\Controllers\PurchaseOrdersController.cs" />
+    <Compile Include="Areas\Inventory\Controllers\ReceiptsController.cs" />
+    <Compile Include="Areas\Inventory\Controllers\SpoilagesController.cs" />
+    <Compile Include="Areas\Inventory\Controllers\VendorsController.cs" />
     <Compile Include="Areas\Inventory\InventoryAreaRegistration.cs" />
     <Compile Include="Areas\Sales\Controllers\SalesHomeController.cs" />
     <Compile Include="Areas\Sales\SalesAreaRegistration.cs" />
@@ -224,6 +231,41 @@
     <Content Include="Areas\Sales\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Sales\Views\SalesHome\Index.cshtml" />
     <Content Include="Areas\Sales\Views\SalesHome\SalesOrder.cshtml" />
+    <Content Include="Areas\Inventory\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\Inventory\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\Inventory\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\Inventory\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\Create.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\Delete.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\Details.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\Edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\PoItems\Create.cshtml" />
+    <Content Include="Areas\Inventory\Views\PoItems\Delete.cshtml" />
+    <Content Include="Areas\Inventory\Views\PoItems\Details.cshtml" />
+    <Content Include="Areas\Inventory\Views\PoItems\Edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\PoItems\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\Create.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\Delete.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\Details.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\Edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\PurchaseOrders\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Receipts\Create.cshtml" />
+    <Content Include="Areas\Inventory\Views\Receipts\Delete.cshtml" />
+    <Content Include="Areas\Inventory\Views\Receipts\Details.cshtml" />
+    <Content Include="Areas\Inventory\Views\Receipts\Edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Receipts\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Spoilages\Create.cshtml" />
+    <Content Include="Areas\Inventory\Views\Spoilages\Delete.cshtml" />
+    <Content Include="Areas\Inventory\Views\Spoilages\Details.cshtml" />
+    <Content Include="Areas\Inventory\Views\Spoilages\Edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Spoilages\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\Create.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\Delete.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\Details.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\Edit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -291,6 +333,12 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITP245-Model\ITP245-Model.csproj">
+      <Project>{14470486-f7a5-4494-ad19-2a00115fd082}</Project>
+      <Name>ITP245-Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

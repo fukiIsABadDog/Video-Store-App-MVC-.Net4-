@@ -9,7 +9,7 @@ namespace _245_MVC_Project.Areas.Inventory.Controllers
     public class InventoryHomeController : Controller
     {
         // GET: Inventory/InventoryHome
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles ="Sales")]
         public ActionResult Index()
         {
             return View();
