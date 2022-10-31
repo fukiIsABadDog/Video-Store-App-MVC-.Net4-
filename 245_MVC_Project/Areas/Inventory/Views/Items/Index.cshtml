@@ -8,63 +8,38 @@
 <h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <!--Drop down list category filter -->
+    @Html.ActionLink("Create New", "Create") &nbsp; &nbsp; &nbsp; &nbsp;
+    <label class="filter">Item Tag:</label>&nbsp; &nbsp;
+    @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "filter", @onchange = "FillByTag()" })
+
+    <!--Search box name filter-->
+    &nbsp;&nbsp;&nbsp;&nbsp;<label class="filter">Search by Item Name:</label>&nbsp;&nbsp;
+    @Html.TextArea("Search",null,htmlAttributes: new {@class="filter",@onchange="FilterByName()"})
+
+
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QuantityOnHand)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RetailPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StandardCost)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageLocation)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category.Name)
-        </th>
-        <th></th>
-    </tr>
+<div id="itemContainer">
+    @Html.Partial("_Index", Model)
+</div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuantityOnHand)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RetailPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StandardCost)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImageLocation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ItemId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ItemId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ItemId })
-        </td>
-    </tr>
-}
+@section Scripts{
 
-</table>
+    <script type="text/javascript">
+
+        function FillByTag() {
+            var categoryId = $('#CategoryId').val();
+            var container = $('#itemContainer');
+            container.load('@Url.Action("_IndexByTag")?id=' + categoryId)
+        }
+
+        function FilterByName() {
+            var parm = $('#Search').val();
+            var container = $('#itemContainer');
+            container.load('@Url.Action("_IndexByName")?parm=' + parm)
+
+        }
+    </script>
+
+
+    }

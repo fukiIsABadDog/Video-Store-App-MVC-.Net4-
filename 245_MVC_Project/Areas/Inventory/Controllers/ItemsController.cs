@@ -17,10 +17,23 @@ namespace _245_MVC_Project.Areas.Inventory.Controllers
         // GET: Inventory/Items
         public ActionResult Index()
         {
+            ViewBag.CategoryId = new SelectList(db.Categories.OrderBy(c => c.Name),"CategoryId","Name");
             var items = db.Items.Include(i => i.Category);
             return View(items.ToList());
         }
 
+        public ActionResult _IndexByTag(int id)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var items = db.Items.Include(i=>i.Category).Where(i=>i.CategoryId.Equals(id)).ToArray();
+            return PartialView("_Index",items);
+        }
+
+        public ActionResult _IndexByName(string parm)
+        {
+            var items = db.Items.Include(i => i.Category).Where(i=>i.Name.Contains(parm)).ToArray();
+            return PartialView("_Index", items);
+        }
         // GET: Inventory/Items/Details/5
         public ActionResult Details(int? id)
         {

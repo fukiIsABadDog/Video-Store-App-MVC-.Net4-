@@ -266,6 +266,8 @@
     <Content Include="Areas\Inventory\Views\Vendors\Details.cshtml" />
     <Content Include="Areas\Inventory\Views\Vendors\Edit.cshtml" />
     <Content Include="Areas\Inventory\Views\Vendors\Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Items\_Index.cshtml" />
+    <Content Include="Areas\Inventory\Views\Vendors\_Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
