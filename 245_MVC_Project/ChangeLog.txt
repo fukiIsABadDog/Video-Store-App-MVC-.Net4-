@@ -63,3 +63,23 @@
 			2) modified @viewbag.title to better refect page type
 
 }
+
+10/31{
+
+	-Added filtering to Item and Vendor pages-
+
+	created partial pages to reflect results
+	added necessary controllers to call partial pages
+	added drop down filtering( items and vendor pages)
+	added search function (items only)
+
+	-Versioning-
+	 
+	 versioning needs clarification
+		I did not see a video reference 
+		and it is a confusing thing to research as there is no one way to do it
+
+
+
+
+}
