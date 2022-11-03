@@ -36,8 +36,8 @@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year</p>
-            @* Versioning needs clarification *@
-            <p>Version: To Be Released</p>
+            
+            <p>Version: @ViewContext.Controller.GetType().Assembly.GetName().Version</p>
 
         </footer>
     </div>

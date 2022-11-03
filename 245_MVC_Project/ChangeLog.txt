@@ -75,9 +75,7 @@
 
 	-Versioning-
 	 
-	 versioning needs clarification
-		I did not see a video reference 
-		and it is a confusing thing to research as there is no one way to do it
+	 Added Versioning to shared layout footer in date form
 
 
 
