@@ -81,3 +81,11 @@
 
 
 }
+
+11/3{
+
+	added inventory link to main nav bar in inventory shared layout
+	added intra-inventory area navigation bar
+	added partial pages to consolidate Create and Edit pages --> now _CreateEdit 
+	
+}

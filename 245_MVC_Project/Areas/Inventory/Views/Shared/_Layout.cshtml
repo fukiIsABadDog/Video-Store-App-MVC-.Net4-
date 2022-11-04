@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - ITP</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/Site.css" rel="stylesheet" />
@@ -17,21 +17,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("ITP", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Voyager", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                  
-                <div class="navbar-collapse collapse"> 
+                @Html.ActionLink("Inventory", "Index", "InventoryHome", new { area = "Inventory", controller = "InventoryHomeController" }, new { @class = "navbar-brand" })
+                <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                     </ul>
                 </div>
             </div>
-         </div>  
+        </div>
     </div>
 
     <div class="container body-content">
+
+        <h2>@ViewBag.Title</h2>
+        @Html.Partial("_Inventory")
+
         @RenderBody()
-        <hr />
+
         <footer>
             <p>&copy; @DateTime.Now.Year</p>
         </footer>
