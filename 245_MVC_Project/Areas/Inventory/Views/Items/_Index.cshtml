@@ -6,9 +6,6 @@
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.QuantityOnHand)
         </th>
         <th>
@@ -16,9 +13,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.StandardCost)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageLocation)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Category.Name)
@@ -33,9 +27,6 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.QuantityOnHand)
             </td>
             <td>
@@ -45,15 +36,12 @@
                 @Html.DisplayFor(modelItem => item.StandardCost)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageLocation)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Category.Name)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ItemId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ItemId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ItemId })
+            <td class=" btn"> @*Added btn to keep badges from stacking, also in Spoilages*@
+                @Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "label-primary badge " }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ItemId }, new { @class = "label-primary badge " }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ItemId }, new { @class = "label-danger badge " })
             </td>
         </tr>
     }

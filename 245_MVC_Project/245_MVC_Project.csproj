@@ -274,6 +274,7 @@
     <Content Include="Areas\Inventory\Views\Items\_CreateEdit.cshtml" />
     <Content Include="Areas\Inventory\Views\PurchaseOrders\_CreateEdit.cshtml" />
     <Content Include="Areas\Inventory\Views\Receipts\_CreateEdit.cshtml" />
+    <Content Include="Areas\Inventory\Views\Spoilages\_CreateEdit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

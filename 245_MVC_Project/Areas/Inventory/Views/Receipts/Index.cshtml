@@ -8,7 +8,7 @@
 
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create Receipt", "Create", null, new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
@@ -22,7 +22,7 @@
             @Html.DisplayNameFor(model => model.ReceiptDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PoItem.PoItemId)
+            @Html.DisplayNameFor(model => model.PoItem.PurchaseOrderNumber)
         </th>
         <th></th>
     </tr>
@@ -39,12 +39,12 @@
             @Html.DisplayFor(modelItem => item.ReceiptDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PoItem.PoItemId)
+            @Html.DisplayFor(modelItem => item.PoItem.PurchaseOrderNumber)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReceiptId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ReceiptId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReceiptId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ReceiptId }, new { @class = "label-primary badge " }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ReceiptId }, new { @class = "label-primary badge " }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ReceiptId }, new { @class = "label-danger badge " })
         </td>
     </tr>
 }

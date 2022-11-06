@@ -83,9 +83,16 @@
 }
 
 11/3{
+	-User interface: changes in Views and EF model MetaData-
 
 	added inventory link to main nav bar in inventory shared layout
-	added intra-inventory area navigation bar
-	added partial pages to consolidate Create and Edit pages --> now _CreateEdit 
-	
+	added intra-inventory area navigation bar via partial page
+	added spoilages pages
+	added partial pages to consolidate Create and Edit pages
+	modified inventory area pages buttons and titles and alerts
+	modified EF model meta data to reformate names, currencies and dates
+	removed unnecessary data from views
+	modfied EF model via EDMX, mapped enum to spoilage reason type
+
+
 }

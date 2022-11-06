@@ -6,7 +6,7 @@
 }
     <p>
         
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Create Category", "Create", null, new {@class = "btn btn-primary"} )
     </p>
     <table class="table">
         <tr>
@@ -23,9 +23,9 @@
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.CategoryId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId },new {@class = "label-primary badge "}) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CategoryId }, new { @class = "label-primary badge " }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId }, new { @class = "label-danger badge " })
                 </td>
             </tr>
         }

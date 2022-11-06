@@ -110,7 +110,7 @@ namespace _245_MVC_Project.Areas.Inventory.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Category category = db.Categories.Find(id);
-            db.Categories.Remove(category);
+            db.Categories.Remove(category); // can not delete book
             db.SaveChanges();
             return RedirectToAction("Index");
         }

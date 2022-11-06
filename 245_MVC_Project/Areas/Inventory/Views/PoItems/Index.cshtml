@@ -9,7 +9,7 @@
 
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create PO Item", "Create", null, new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
@@ -43,9 +43,9 @@
             @Html.DisplayFor(modelItem => item.PurchaseOrder.PurchaseOrderNumber)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PoItemId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PoItemId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PoItemId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.PoItemId }, new { @class = "label-primary badge " }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PoItemId }, new { @class = "label-primary badge " }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PoItemId }, new { @class = "label-danger badge " })
         </td>
     </tr>
 }

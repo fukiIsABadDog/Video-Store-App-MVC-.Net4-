@@ -5,10 +5,9 @@
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+
 </p>
 <table class="table">
     <tr>
@@ -53,10 +52,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.Item.Name)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SpoilageId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SpoilageId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SpoilageId })
+        <td class="btn">
+            @Html.ActionLink("Edit", "Edit", new { id=item.SpoilageId }, new { @class = "label-primary badge " }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SpoilageId }, new { @class = "label-primary badge " }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SpoilageId }, new { @class = "label-danger badge " })
         </td>
     </tr>
 }

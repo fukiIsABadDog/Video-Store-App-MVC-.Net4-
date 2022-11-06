@@ -9,13 +9,13 @@
 
 <p>
     <!--Drop down list category filter -->
-    @Html.ActionLink("Create New", "Create") &nbsp; &nbsp; &nbsp; &nbsp;
+    @Html.ActionLink("Create Item", "Create", null, new { @class = "btn btn-primary" }) &nbsp; &nbsp; &nbsp; &nbsp;
     <label class="filter">Item Tag:</label>&nbsp; &nbsp;
     @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "filter", @onchange = "FillByTag()" })
 
     <!--Search box name filter-->
     &nbsp;&nbsp;&nbsp;&nbsp;<label class="filter">Search by Item Name:</label>&nbsp;&nbsp;
-    @Html.TextArea("Search",null,htmlAttributes: new {@class="filter",@onchange="FilterByName()"})
+    @Html.TextArea("Search", null, htmlAttributes: new { @class = "filter", @onchange = "FilterByName()" })
 
 
 </p>

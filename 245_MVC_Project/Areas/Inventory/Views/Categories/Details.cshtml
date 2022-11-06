@@ -1,14 +1,14 @@
 ﻿@model ITP245_Model.Category
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Categories";
+    
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>Category</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -22,6 +22,7 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId }, new { @class = "btn btn-warning" })
+
 </p>

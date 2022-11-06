@@ -79,6 +79,12 @@
     <Compile Include="PurchaseOrder.cs">
       <DependentUpon>InventoryModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ReasonTypeName.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReasonTypeNames.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Receipt.cs">
       <DependentUpon>InventoryModel.tt</DependentUpon>
     </Compile>

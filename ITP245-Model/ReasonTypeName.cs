@@ -10,18 +10,11 @@
 namespace ITP245_Model
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Spoilage
+    public enum ReasonTypeName : int
     {
-        public int SpoilageId { get; set; }
-        public int ItemId { get; set; }
-        public int Quantity { get; set; }
-        public ReasonTypeName ReasonType { get; set; }
-        public string Description { get; set; }
-        public System.DateTime SpoilageDate { get; set; }
-        public decimal Value { get; set; }
-    
-        public virtual Item Item { get; set; }
+        Spoiled = 1,
+        Damaged = 2,
+        Broke = 3
     }
 }

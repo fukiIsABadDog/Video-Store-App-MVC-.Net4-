@@ -1,16 +1,22 @@
 ﻿@model ITP245_Model.PurchaseOrder
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Purchase Order";
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>PurchaseOrder</h4>
+    
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseOrderNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseOrderNumber)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.PoDate)
         </dt>
@@ -38,6 +44,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PurchaseOrderNumber }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PurchaseOrderNumber }, new { @class = "btn btn-warning" })
+
+    
 </p>

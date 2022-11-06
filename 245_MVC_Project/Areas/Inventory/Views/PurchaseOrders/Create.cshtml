@@ -1,6 +1,8 @@
 ﻿@model ITP245_Model.PurchaseOrder
 
 @{
+    ViewBag.Title = "Purchase Order";
+
     ViewBag.Subtitle = "Create Purchase Order";
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
@@ -16,5 +18,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
 </div>

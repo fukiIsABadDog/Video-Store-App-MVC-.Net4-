@@ -1,6 +1,7 @@
 ﻿@model ITP245_Model.Item
 
 @{
+    ViewBag.Title = "Item";
     ViewBag.Subtitle = "Create Item";
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
@@ -14,5 +15,5 @@
     </div>
 }
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
 </div>
