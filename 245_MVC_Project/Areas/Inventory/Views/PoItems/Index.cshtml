@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ITP245_Model.PoItem>
+﻿@using _245_MVC_Project.HtmlHelpers
+@model IEnumerable<ITP245_Model.PoItem>
 
 @{
     ViewBag.Title = "Purchase Order Items";
@@ -28,26 +29,28 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Quantity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PurchaseOrder.PurchaseOrderNumber)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PoItemId }, new { @class = "label-primary badge " }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PoItemId }, new { @class = "label-primary badge " }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PoItemId }, new { @class = "label-danger badge " })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseOrder.PurchaseOrderNumber)
+            </td>
+            <td>
+                @Html.IndexLinks(item,"PoItems")
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.PoItemId }, new { @class = "label-primary badge " }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PoItemId }, new { @class = "label-primary badge " }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PoItemId }, new { @class = "label-danger badge " })*@
+            </td>
+        </tr>
+    }
 
 </table>

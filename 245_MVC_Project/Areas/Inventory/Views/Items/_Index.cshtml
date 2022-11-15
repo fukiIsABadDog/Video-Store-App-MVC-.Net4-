@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ITP245_Model.Item>
+﻿@using _245_MVC_Project.HtmlHelpers
+@model IEnumerable<ITP245_Model.Item>
 
 <table class="table">
     <tr>
@@ -38,10 +39,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Category.Name)
             </td>
-            <td class=" btn"> @*Added btn to keep badges from stacking, also in Spoilages*@
-                @Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "label-primary badge " }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ItemId }, new { @class = "label-primary badge " }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ItemId }, new { @class = "label-danger badge " })
+            <td class=" btn">
+                
+                @Html.IndexLinks(item, "Items")
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "label-primary badge " }) |*@  
+                @*@Html.ActionLink("Details", "Details", new { id = item.ItemId }, new { @class = "label-primary badge " }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ItemId }, new { @class = "label-danger badge " })*@
             </td>
         </tr>
     }

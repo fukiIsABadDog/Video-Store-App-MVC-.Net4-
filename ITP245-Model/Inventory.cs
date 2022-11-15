@@ -7,9 +7,24 @@ using System.Threading.Tasks;
 
 namespace ITP245_Model
 {
+
+    public interface IItem
+    { 
+        int Id { get; }
+    }
+
+    public interface IEmail
+    {  
+       string Email { get; }
+       string Contact { get; }
+    }
+
+
+
     [MetadataType(typeof(CategoryMetaData))]
-    public partial class Category
+    public partial class Category:IItem
     {
+        public int Id => CategoryId;
         private sealed class CategoryMetaData
         {
             [Display(Name = "Type")]
@@ -19,8 +34,10 @@ namespace ITP245_Model
     }
 
     [MetadataType(typeof(ItemMetaData))]
-    public partial class Item
+    public partial class Item:IItem
     {
+        //testing here
+        public int Id => ItemId;
         private sealed class ItemMetaData
         {
             [Display(Name ="Title")]
@@ -40,8 +57,9 @@ namespace ITP245_Model
         }
     }
     [MetadataType(typeof(PoItemMetaData))]
-    public partial class PoItem
+    public partial class PoItem:IItem
     {
+        public int Id => PoItemId;
         private sealed class PoItemMetaData
         {
             [DisplayFormat(DataFormatString = "{0:C}")]
@@ -52,8 +70,10 @@ namespace ITP245_Model
         }
     }
     [MetadataType(typeof(PurchaseOrderMetaData))]
-    public partial class PurchaseOrder
+    public partial class PurchaseOrder:IItem
     {
+        // this might not be right
+        public int Id => PurchaseOrderNumber;
         private sealed class PurchaseOrderMetaData
         {
             [Display(Name="Date")]
@@ -70,8 +90,9 @@ namespace ITP245_Model
         }
     }
     [MetadataType(typeof(ReceiptMetaData))]
-    public partial class Receipt
+    public partial class Receipt:IItem
     {
+        public int Id => ReceiptId;
         private sealed class ReceiptMetaData
         {
 
@@ -87,8 +108,9 @@ namespace ITP245_Model
         }
     }
     [MetadataType(typeof(SpoilageMetaData))]
-    public partial class Spoilage
+    public partial class Spoilage:IItem
     {
+        public int Id => SpoilageId;
         private sealed class SpoilageMetaData
         {
             [Display(Name ="Reason Type" )]
@@ -103,13 +125,17 @@ namespace ITP245_Model
 
         }
     }
+
+
+
     [MetadataType(typeof(VendorMetaData))]
-    public partial class Vendor
+    public partial class Vendor:IItem,IEmail
     {
+        public int Id => VendorId;
         private sealed class VendorMetaData
         {
             [Display(Name = "Vendor Name")]
             public string Name { get; set; }
         }
-}
+    }
 }

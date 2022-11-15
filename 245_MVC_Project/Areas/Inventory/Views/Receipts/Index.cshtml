@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ITP245_Model.Receipt>
+﻿@using _245_MVC_Project.HtmlHelpers
+@model IEnumerable<ITP245_Model.Receipt>
 
 @{
     ViewBag.Title = "Receipts";
@@ -27,26 +28,29 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Quantity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Amount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReceiptDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PoItem.PurchaseOrderNumber)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReceiptId }, new { @class = "label-primary badge " }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ReceiptId }, new { @class = "label-primary badge " }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReceiptId }, new { @class = "label-danger badge " })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceiptDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PoItem.PurchaseOrderNumber)
+            </td>
+            <td>
+                @Html.IndexLinks(item,"Receipts")
+
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.ReceiptId }, new { @class = "label-primary badge " }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.ReceiptId }, new { @class = "label-primary badge " }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.ReceiptId }, new { @class = "label-danger badge " })*@
+            </td>
+        </tr>
+    }
 
 </table>

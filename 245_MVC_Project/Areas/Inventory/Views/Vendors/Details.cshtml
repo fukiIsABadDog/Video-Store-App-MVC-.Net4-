@@ -1,4 +1,6 @@
-﻿@model ITP245_Model.Vendor
+﻿@using _245_MVC_Project.HtmlHelpers
+@model ITP245_Model.Vendor
+
 
 @{
     ViewBag.Title = "Details";
@@ -72,7 +74,12 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Email)
+            @* Previous email display *@
+            @*@Html.DisplayFor(model => model.Email)*@
+
+            @* new email display *@
+            @*This was fun to figure out*@
+            @Html.EmailLink(Model)
         </dd>
 
         <dt>

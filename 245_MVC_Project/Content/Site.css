@@ -131,3 +131,11 @@ h1 {
     bottom: 5%;
     left: 10%;
 }
+
+/*For Email Class in custom HtmlExtension -Justin*/
+a.Email {
+    color: blue;
+    font-size:medium;
+    border-block: outset;
+    border-block-color:silver;
+}

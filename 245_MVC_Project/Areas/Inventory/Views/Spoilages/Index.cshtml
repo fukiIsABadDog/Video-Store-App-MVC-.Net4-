@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ITP245_Model.Spoilage>
+﻿@using _245_MVC_Project.HtmlHelpers
+@model IEnumerable<ITP245_Model.Spoilage>
 
 @{
     ViewBag.Title = "Spoilages";
@@ -32,32 +33,34 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Quantity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReasonType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SpoilageDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Value)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Item.Name)
-        </td>
-        <td class="btn">
-            @Html.ActionLink("Edit", "Edit", new { id=item.SpoilageId }, new { @class = "label-primary badge " }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SpoilageId }, new { @class = "label-primary badge " }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SpoilageId }, new { @class = "label-danger badge " })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReasonType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpoilageDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.Name)
+            </td>
+            <td class="btn">
+                @Html.IndexLinks(item,"Spoilages")
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.SpoilageId }, new { @class = "label-primary badge " }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SpoilageId }, new { @class = "label-primary badge " }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SpoilageId }, new { @class = "label-danger badge " })*@
+            </td>
+        </tr>
+    }
 
 </table>

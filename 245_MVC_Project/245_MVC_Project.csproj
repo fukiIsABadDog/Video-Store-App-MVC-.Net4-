@@ -188,6 +188,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\HtmlExtensions.cs" />
     <Compile Include="Models\About.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -225,6 +226,7 @@
     <Content Include="Areas\School\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\School\Views\SchoolHome\Index.cshtml" />
     <Content Include="Areas\Inventory\Views\InventoryHome\Index.cshtml" />
+    <Content Include="Scripts\MyScripts\customScripts.js" />
     <Content Include="Web.config" />
     <Content Include="Areas\Sales\Views\web.config" />
     <Content Include="Areas\Sales\Views\_ViewStart.cshtml" />

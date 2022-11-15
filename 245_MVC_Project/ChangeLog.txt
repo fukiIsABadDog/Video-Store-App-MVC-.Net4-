@@ -96,3 +96,21 @@
 
 
 }
+
+11/14{
+	
+	-added email links to vendors-
+	
+	added interface of IEmail to make email code reusable
+	added html helper extension method that generates email link from view model
+	added this html helper to vendor pages (index and details)
+	added css in site.css for htmlhelper links
+
+	-other changes-
+
+	added htmlhelper for Index page links (edit,details,delete)
+	replaced existing link code in inventory area views with custom htmlhelper 
+
+
+
+}
