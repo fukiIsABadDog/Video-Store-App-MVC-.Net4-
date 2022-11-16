@@ -69,7 +69,9 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Category.Name)
+            @*@Html.DisplayFor(model => model.Category.Name)*@
+
+            @Html.ActionLink(Model.Category.Name, "Details", "Categories", new { area = "Inventory", id = Model.CategoryId }, null)
         </dd>
 
     </dl>

@@ -37,7 +37,8 @@
                 @Html.DisplayFor(modelItem => item.StandardCost)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Category.Name)
+                @*@Html.DisplayFor(modelItem => item.Category.Name)*@
+                @Html.ActionLink(item.Category.Name,"Details", "Categories",new {area = "Inventory", id =item.CategoryId},null)
             </td>
             <td class=" btn">
                 

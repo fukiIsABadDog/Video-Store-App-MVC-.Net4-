@@ -60,7 +60,9 @@
         </dt>
 
         <dd class=" alert-danger">
-            @Html.DisplayFor(model => model.Item.Name)
+            @*@Html.DisplayFor(model => model.Item.Name)*@
+            @Html.ActionLink(Model.Item.Name, "Details", "Items", new { area = "Inventory", id = Model.ItemId }, null)
+
         </dd>
 
     </dl>

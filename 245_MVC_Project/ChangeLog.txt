@@ -114,3 +114,22 @@
 
 
 }
+
+11/15{
+
+	added action links to categories in item area (index,details,delete)
+	added action links to items in spoilage area (index,details,delete)
+	added action link s to vendor in purchase order area (index,details,delete)
+
+	category detail page now displays all items within that category
+	
+
+	spent time trying to figure out weird url paths generated when vendor pages use IndexLinks htmlhelper
+	this issue resolved itself somehow..... weird behavior
+
+	Vendor pages- added partial pages, updated buttons and text layout to match rest of site
+
+	Added list of Purchase orders to vendor details page
+	updated bootstrap on vendor and categories detail page for better readablity
+
+}

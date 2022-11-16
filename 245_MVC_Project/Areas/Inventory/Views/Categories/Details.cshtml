@@ -2,27 +2,50 @@
 
 @{
     ViewBag.Title = "Categories";
-    
+
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+@* Probably dont neet this *@
+<h2 class="well well-lg">Details</h2>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">
+            @Html.DisplayFor(model => model.Name) Details
+        </h2>
+    </div>
+    <div class="panel-body list-group">
+        <dl class="list-group-item dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="pull-right">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId }, new { @class = "btn btn-warning" })
+            </dt>
+        </dl>
+    </div>
 </div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">@Html.DisplayFor(model => model.Name) Items</h3>
+    </div>
+    <div class="panel-body list-group">
+        @foreach (var i in Model.Items)
+        {
+            <div class="list-group-item">
+                @Html.ActionLink(i.Name, "Details", "Items", new { area = "Inventory", id = i.Id }, null)
+
+            </div>
+        }
+    </div>
+</div>
+
+
 <p>
     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId }, new { @class = "btn btn-warning" })
-
 </p>

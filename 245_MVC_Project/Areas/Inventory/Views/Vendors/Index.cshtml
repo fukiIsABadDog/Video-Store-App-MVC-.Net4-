@@ -5,10 +5,8 @@
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create") &nbsp; &nbsp; &nbsp; &nbsp;
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" }) &nbsp; &nbsp; &nbsp; &nbsp;
 
     <!--Drop down list state filter -->
     <label class="filter">Vendor Tag:</label>&nbsp; &nbsp;
@@ -31,7 +29,7 @@
             container.load('@Url.Action("_IndexByTag")?state=' + state)
         }
 
-        
-   
+
+
     </script>
 }

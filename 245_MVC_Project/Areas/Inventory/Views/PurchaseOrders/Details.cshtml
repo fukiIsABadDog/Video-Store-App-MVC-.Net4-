@@ -38,7 +38,9 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Vendor.Name)
+            @*@Html.DisplayFor(model => model.Vendor.Name)*@
+            @Html.ActionLink(Model.Vendor.Name, "Details", "Vendors", new { area = "Inventory", id = Model.VendorId }, null)
+
         </dd>
 
     </dl>

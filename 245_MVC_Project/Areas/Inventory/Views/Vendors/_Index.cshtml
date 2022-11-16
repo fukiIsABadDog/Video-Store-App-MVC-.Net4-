@@ -65,7 +65,8 @@
                 @Html.DisplayFor(modelItem => item.Contact)
             </td>
             <td>
-                @Html.IndexLinks(item, "Vendors")
+                @Html.IndexLinks(item,"Vendors")
+                @* Randomly broke and now is working.... idk whats going on *@
 
                 @*@Html.ActionLink("Edit", "Edit", new { id = item.VendorId }) |
         @Html.ActionLink("Details", "Details", new { id = item.VendorId }) |

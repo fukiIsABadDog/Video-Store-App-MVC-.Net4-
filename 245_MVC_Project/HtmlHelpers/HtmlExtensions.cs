@@ -28,7 +28,7 @@ namespace _245_MVC_Project.HtmlHelpers
         {
             var edit = new TagBuilder("a") { InnerHtml = "Edit" };
             edit.MergeAttribute("id", "Edit");
-            edit.MergeAttribute("href",$"{controller}/Edit/{item.Id}");
+            edit.MergeAttribute("href",$"{controller}/Edit/{item.Id}"); //doesnt work for vendor... weird
             edit.MergeAttribute("class", "label-primary badge");
 
             string editLink= edit.ToString(TagRenderMode.Normal);
@@ -51,6 +51,7 @@ namespace _245_MVC_Project.HtmlHelpers
 
 
             return new MvcHtmlString(editLink + "|" + detailsLink + "|" + deleteLink);
+            //doesnt work on vendor page..... we get different paths
         }
     }
 }

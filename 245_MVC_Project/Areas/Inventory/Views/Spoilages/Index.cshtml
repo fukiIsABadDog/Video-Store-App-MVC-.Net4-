@@ -52,7 +52,8 @@
                 @Html.DisplayFor(modelItem => item.Value)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Item.Name)
+                @*@Html.DisplayFor(modelItem => item.Item.Name)*@
+                @Html.ActionLink(item.Item.Name, "Details", "Items", new { area = "Inventory", id = item.ItemId }, null)
             </td>
             <td class="btn">
                 @Html.IndexLinks(item,"Spoilages")
