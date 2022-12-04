@@ -5,27 +5,28 @@
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
+<section class="myTableBox indexFont ">
 
+    <p>
+        <!--Drop down list category filter -->
+        @Html.ActionLink("Create Item", "Create", null, new { @class = "btn btn-primary btn-lg" }) &nbsp; &nbsp; &nbsp; &nbsp;
+        <label class="filter">Item Tag:</label>&nbsp; &nbsp;
+        @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "filter", @onchange = "FillByTag()" })
 
-<p>
-    <!--Drop down list category filter -->
-    @Html.ActionLink("Create Item", "Create", null, new { @class = "btn btn-primary" }) &nbsp; &nbsp; &nbsp; &nbsp;
-    <label class="filter">Item Tag:</label>&nbsp; &nbsp;
-    @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "filter", @onchange = "FillByTag()" })
+        <!--Search box name filter-->
+        &nbsp;&nbsp;&nbsp;&nbsp;<label class="filter">Search by Item Name:</label>&nbsp;&nbsp;
+        @Html.TextArea("Search", null, htmlAttributes: new { @class = "filter", @onchange = "FilterByName()" })
+    </p>
 
-    <!--Search box name filter-->
-    &nbsp;&nbsp;&nbsp;&nbsp;<label class="filter">Search by Item Name:</label>&nbsp;&nbsp;
-    @Html.TextArea("Search", null, htmlAttributes: new { @class = "filter", @onchange = "FilterByName()" })
+    <div id="itemContainer">
+        @Html.Partial("_Index", Model)
+    </div>
 
+</section>
 
-</p>
-<div id="itemContainer">
-    @Html.Partial("_Index", Model)
-</div>
+    @section Scripts{
 
-@section Scripts{
-
-    <script type="text/javascript">
+        <script type="text/javascript">
 
         function FillByTag() {
             var categoryId = $('#CategoryId').val();
@@ -39,7 +40,7 @@
             container.load('@Url.Action("_IndexByName")?parm=' + parm)
 
         }
-    </script>
+        </script>
 
 
     }

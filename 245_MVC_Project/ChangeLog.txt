@@ -133,3 +133,16 @@
 	updated bootstrap on vendor and categories detail page for better readablity
 
 }
+11{
+		added styling to Index Images to be used on all pages // I am using Item Index as the prototype page for layout/style
+}
+
+12/4{
+		added intial images to Item Index
+		fixed custom css width issue for Item Index
+		
+
+		CURRENTLY WORKING ON USER UPLOADED IMAGES VIA CREATE ITEM
+
+		
+}

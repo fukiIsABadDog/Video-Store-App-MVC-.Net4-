@@ -132,10 +132,27 @@ h1 {
     left: 10%;
 }
 
-/*For Email Class in custom HtmlExtension -Justin*/
+/*For Email Class in custom HtmlExtension*/
 a.Email {
     color: blue;
     font-size:medium;
     border-block: outset;
     border-block-color:silver;
 }
+
+.myTableBox {
+    background-color: white;
+    min-height: stretch;
+    width: fit-content;
+    background: linear-gradient(to right bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.3));
+    border-radius: 40px;
+    position: relative;
+    z-index: 3;
+    backdrop-filter: blur(2rem);
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+.indexFont{
+    font-size:large;
+}
+

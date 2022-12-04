@@ -1,8 +1,11 @@
 ﻿@using _245_MVC_Project.HtmlHelpers
 @model IEnumerable<ITP245_Model.Item>
 
-<table class="table">
+<table class="table table-hover" >
     <tr>
+        <th>
+            Image
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -18,12 +21,23 @@
         <th>
             @Html.DisplayNameFor(model => model.Category.Name)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageLocation)
+        </th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
+
+
+<tr>
+            <td>
+                @* Put images here *@
+                @if (!string.IsNullOrEmpty(item.ImageLocation))
+                {
+                    <img src="@Href(item.ImageLocation)" style="width:110px;height:150px;" />
+                }
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -40,7 +54,10 @@
                 @*@Html.DisplayFor(modelItem => item.Category.Name)*@
                 @Html.ActionLink(item.Category.Name,"Details", "Categories",new {area = "Inventory", id =item.CategoryId},null)
             </td>
-            <td class=" btn">
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageLocation)
+            </td>
+            <td class=" btn-group-vertical">
                 
                 @Html.IndexLinks(item, "Items")
                 @*@Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "label-primary badge " }) |*@  
