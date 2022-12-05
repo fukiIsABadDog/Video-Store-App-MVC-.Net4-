@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace ITP245_Model
 {
@@ -36,8 +37,10 @@ namespace ITP245_Model
     [MetadataType(typeof(ItemMetaData))]
     public partial class Item:IItem
     {
-        //testing here
+        
         public int Id => ItemId;
+        public HttpPostedFileBase FileName { get; set; }
+
         private sealed class ItemMetaData
         {
             [Display(Name ="Title")]

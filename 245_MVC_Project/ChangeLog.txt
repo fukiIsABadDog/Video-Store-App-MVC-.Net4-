@@ -142,7 +142,14 @@
 		fixed custom css width issue for Item Index
 		
 
-		CURRENTLY WORKING ON USER UPLOADED IMAGES VIA CREATE ITEM
+		
+}
+
+12/5{
+			added client side image upload to Item Create page
+			added item image to edit page
+			WORKING ON ABILITY TO EDIT IMAGES INSIDE OF EDIT PAGE
 
 		
+
 }

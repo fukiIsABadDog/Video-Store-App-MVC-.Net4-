@@ -1,28 +1,33 @@
-﻿<nav class="navbar navbar-inverse">
-    <ul class="nav navbar-nav">
-        <li>
-            @Html.ActionLink("Inventory Home", "Index", new { area = "Inventory", controller = "InventoryHome" }, new { @class = "navbar-brand" })
-        </li>
-        <li>
-            @Html.ActionLink("Items", "Index", new { area = "Inventory", controller = "Items" }, new { @class = "navbar-brand" })
-        </li>
-        <li>
-            @Html.ActionLink("Categories", "Index", new { area = "Inventory", controller = "Categories" }, new { @class = "navbar-brand" })
-        </li>
-        <li>
-            @Html.ActionLink("PO Items", "Index", new { area = "Inventory", controller = "PoItems" }, new { @class = "navbar-brand" })
-        </li>
-        <li>
-            @Html.ActionLink("Purchase Orders", "Index", new { area = "Inventory", controller = "PurchaseOrders" }, new { @class = "navbar-brand" })
-        </li>
-        <li>
-            @Html.ActionLink("Receipts", "Index", new { area = "Inventory", controller = "Receipts" }, new { @class = "navbar-brand" })
-        </li>
-        <li>
-            @Html.ActionLink("Spoilages", "Index", new { area = "Inventory", controller = "Spoilages" }, new { @class = "navbar-brand" })
-        </li>
-        <li>
-            @Html.ActionLink("Vendors","Index", new { area = "Inventory", controller = "Vendors"}, new {@class = "navbar-brand"})
-        </li>
-    </ul>
-</nav>
+﻿
+<section>@* try here for nav bar modification *@
+
+
+    <nav class="navbar navbar-inverse">
+        <ul class="nav navbar-nav">
+            <li>
+                @Html.ActionLink("Inventory Home", "Index", new { area = "Inventory", controller = "InventoryHome" }, new { @class = "navbar-brand" })
+            </li>
+            <li>
+                @Html.ActionLink("Items", "Index", new { area = "Inventory", controller = "Items" }, new { @class = "navbar-brand" })
+            </li>
+            <li>
+                @Html.ActionLink("Categories", "Index", new { area = "Inventory", controller = "Categories" }, new { @class = "navbar-brand" })
+            </li>
+            <li>
+                @Html.ActionLink("PO Items", "Index", new { area = "Inventory", controller = "PoItems" }, new { @class = "navbar-brand" })
+            </li>
+            <li>
+                @Html.ActionLink("Purchase Orders", "Index", new { area = "Inventory", controller = "PurchaseOrders" }, new { @class = "navbar-brand" })
+            </li>
+            <li>
+                @Html.ActionLink("Receipts", "Index", new { area = "Inventory", controller = "Receipts" }, new { @class = "navbar-brand" })
+            </li>
+            <li>
+                @Html.ActionLink("Spoilages", "Index", new { area = "Inventory", controller = "Spoilages" }, new { @class = "navbar-brand" })
+            </li>
+            <li>
+                @Html.ActionLink("Vendors", "Index", new { area = "Inventory", controller = "Vendors" }, new { @class = "navbar-brand" })
+            </li>
+        </ul>
+    </nav>
+</section>

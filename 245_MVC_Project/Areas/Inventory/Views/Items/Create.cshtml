@@ -6,14 +6,27 @@
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "Items", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        @Html.Partial("_CreateEdit", Model)
-    </div>
+    <section class="myTableBox">
+        <div class="form-horizontal container">
+            @Html.Partial("_CreateEdit", Model)
+        </div>
+        
+        <div>
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    </section>
 }
-<div>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
-</div>
+        <script type="text/javascript">
+            function show(input) {
+                if (input.files && input.files[0]) {
+                    var filedr = new FileReader(e);
+                    filedr.onload = function (e) {
+                        $('#item_image').attr('src', e.target.result);
+                    }
+                    filedr.readAsDataURL(inputfiles[0]);
+                }
+            }
+        </script>

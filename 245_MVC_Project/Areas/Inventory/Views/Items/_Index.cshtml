@@ -29,42 +29,41 @@
     @foreach (var item in Model)
     {
 
-
-<tr>
-            <td>
-                @* Put images here *@
-                @if (!string.IsNullOrEmpty(item.ImageLocation))
-                {
-                    <img src="@Href(item.ImageLocation)" style="width:110px;height:150px;" />
-                }
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.QuantityOnHand)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RetailPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StandardCost)
-            </td>
-            <td>
-                @*@Html.DisplayFor(modelItem => item.Category.Name)*@
-                @Html.ActionLink(item.Category.Name,"Details", "Categories",new {area = "Inventory", id =item.CategoryId},null)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageLocation)
-            </td>
-            <td class=" btn-group-vertical">
+    <tr>
+        <td>
+               
+            @if (!string.IsNullOrEmpty(item.ImageLocation))
+            {
+                <img src="@Href(item.ImageLocation)" style="width:110px;height:150px;" />
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantityOnHand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RetailPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StandardCost)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.Category.Name)*@
+            @Html.ActionLink(item.Category.Name,"Details", "Categories",new {area = "Inventory", id =item.CategoryId},null)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageLocation)
+        </td>
+        <td class=" btn-group-vertical">
                 
-                @Html.IndexLinks(item, "Items")
-                @*@Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "label-primary badge " }) |*@  
-                @*@Html.ActionLink("Details", "Details", new { id = item.ItemId }, new { @class = "label-primary badge " }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ItemId }, new { @class = "label-danger badge " })*@
-            </td>
-        </tr>
+            @Html.IndexLinks(item, "Items")
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "label-primary badge " }) |*@  
+            @*@Html.ActionLink("Details", "Details", new { id = item.ItemId }, new { @class = "label-primary badge " }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ItemId }, new { @class = "label-danger badge " })*@
+        </td>
+    </tr>
     }
 
 </table>

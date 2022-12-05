@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using _245_MVC_Project.Models;
 using ITP245_Model;
 
 namespace _245_MVC_Project.Areas.Inventory.Controllers
@@ -61,17 +64,48 @@ namespace _245_MVC_Project.Areas.Inventory.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ItemId,CategoryId,Name,Description,QuantityOnHand,RetailPrice,StandardCost,ImageLocation")] Item item)
+        public ActionResult Create([Bind(Include = "ItemId,CategoryId,Name,Description,QuantityOnHand,RetailPrice,StandardCost,ImageLocation,FileName")] Item item)
         {
             if (ModelState.IsValid)
             {
                 db.Items.Add(item);
+                if(item.FileName != null)
+                {
+                    item.ImageLocation = UploadImage(item.FileName);
+                }
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", item.CategoryId);
             return View(item);
+        }
+        private string UploadImage(HttpPostedFileBase file)
+        {
+            if (Request.Files.Count > 0)
+            {
+                try
+                {
+                    var allowedExtensions = new[] { ".JPG", ".JPEG", ".PNG", ".jpg", ".jpeg", ".png"};
+                    var imagePath = ConfigurationManager.AppSettings["ItemImage"];
+                    var mapPath = HttpContext.Server.MapPath(imagePath);
+                    string path = Path.Combine(mapPath, Path.GetFileName(file.FileName));
+                    string ext = Path.GetExtension(file.FileName);
+                    if (allowedExtensions.Contains(ext))
+                    {
+                        file.SaveAs(path);
+                        ViewBag.Message = "File uploaded successfully";
+                        return $"{imagePath}/{file.FileName}";
+                    }
+                }
+                catch(Exception ex)
+                {
+                    ViewBag.Message = $"ERROR: {ex.Message}";
+                }
+                
+            }
+
+            return String.Empty;
         }
 
         // GET: Inventory/Items/Edit/5
@@ -95,12 +129,16 @@ namespace _245_MVC_Project.Areas.Inventory.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ItemId,CategoryId,Name,Description,QuantityOnHand,RetailPrice,StandardCost,ImageLocation")] Item item)
+        public ActionResult Edit([Bind(Include = "ItemId,CategoryId,Name,Description,QuantityOnHand,RetailPrice,StandardCost,ImageLocation,FileName")] Item item)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) //TESTING 12/5 FOR IMAGE EDIT
             {
                 db.Entry(item).State = EntityState.Modified;
-                db.SaveChanges();
+                if (item.FileName != null)
+                {
+                    item.ImageLocation = UploadImage(item.FileName);
+            }
+            db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", item.CategoryId);
