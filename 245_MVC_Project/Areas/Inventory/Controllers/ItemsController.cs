@@ -20,16 +20,29 @@ namespace _245_MVC_Project.Areas.Inventory.Controllers
         // GET: Inventory/Items
         public ActionResult Index()
         {
-            ViewBag.CategoryId = new SelectList(db.Categories.OrderBy(c => c.Name),"CategoryId","Name");
-            var items = db.Items.Include(i => i.Category);
-            return View(items.ToList());
+            //create object that stores all categories?
+            ViewBag.CategoryId = new SelectList(db.Categories.OrderBy(c => c.Name), "CategoryId", "Name");
+            
+            var items = db.Items.Include(i => i.Category).ToList();
+            return View(items);
         }
 
+        //trying to send null id to resent filter
         public ActionResult _IndexByTag(int id)
         {
             db.Configuration.ProxyCreationEnabled = false;
-            var items = db.Items.Include(i=>i.Category).Where(i=>i.CategoryId.Equals(id)).ToArray();
-            return PartialView("_Index",items);
+
+            if (id == 0)
+            {
+                var allItems = db.Items.Include(i => i.Category).ToList();
+                return PartialView("_Index", allItems); ;
+            }
+            else
+            {
+                var items = db.Items.Include(i => i.Category).Where(i => i.CategoryId.Equals(id)).ToArray();
+                return PartialView("_Index", items);
+            }
+            
         }
 
         public ActionResult _IndexByName(string parm)
