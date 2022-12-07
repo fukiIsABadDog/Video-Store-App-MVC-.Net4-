@@ -1,69 +1,70 @@
 ﻿@using _245_MVC_Project.HtmlHelpers
 @model IEnumerable<ITP245_Model.Item>
 
-<table class="table table-hover" >
+<table class="table table-hover table-condensed"style="table-layout: fixed; width: 100%;">
     <tr>
-        <th>
+        <th scope="col" class="visible-sm visible-md visible-lg">
             Image
         </th>
-        <th>
+        <th scope="col">
             @Html.DisplayNameFor(model => model.Name)
         </th>
-        <th>
+        <th scope="col">
             @Html.DisplayNameFor(model => model.QuantityOnHand)
         </th>
-        <th>
+        <th scope="col">
             @Html.DisplayNameFor(model => model.RetailPrice)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.StandardCost)
         </th>
-        <th>
+        <th scope="col">
             @Html.DisplayNameFor(model => model.Category.Name)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageLocation)
+        <th scope="col">
+            
         </th>
     </tr>
 
     @foreach (var item in Model)
     {
+        
+            <tr>
+                <td class="visible-sm visible-md visible-lg">
 
-    <tr>
-        <td>
-               
-            @if (!string.IsNullOrEmpty(item.ImageLocation))
-            {
-                <img src="@Href(item.ImageLocation)" style="width:110px;height:150px;" />
-            }
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuantityOnHand)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RetailPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StandardCost)
-        </td>
-        <td>
-            @*@Html.DisplayFor(modelItem => item.Category.Name)*@
-            @Html.ActionLink(item.Category.Name,"Details", "Categories",new {area = "Inventory", id =item.CategoryId},null)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImageLocation)
-        </td>
-        <td class=" btn-group-vertical">
-                
-            @Html.IndexLinks(item, "Items")
-            @*@Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "label-primary badge " }) |*@  
-            @*@Html.ActionLink("Details", "Details", new { id = item.ItemId }, new { @class = "label-primary badge " }) |
+                    @if (!string.IsNullOrEmpty(item.ImageLocation))
+                    {
+                        <img src="@Href(item.ImageLocation)" style="width:110px;height:150px;" />
+                    }
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantityOnHand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RetailPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StandardCost)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Category.Name)*@
+                    @Html.ActionLink(item.Category.Name, "Details", "Categories", new { area = "Inventory", id = item.CategoryId }, null)
+                </td>
+
+                <td>
+                    <div class=" btn-group-vertical">
+                        @Html.IndexLinks(item, "Items")
+                    </div>
+                    
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "label-primary badge " }) |*@
+                    @*@Html.ActionLink("Details", "Details", new { id = item.ItemId }, new { @class = "label-primary badge " }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.ItemId }, new { @class = "label-danger badge " })*@
-        </td>
-    </tr>
-    }
+                </td>
+            </tr>
+     }
 
 </table>

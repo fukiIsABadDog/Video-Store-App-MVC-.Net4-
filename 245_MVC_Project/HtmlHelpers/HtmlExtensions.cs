@@ -29,7 +29,7 @@ namespace _245_MVC_Project.HtmlHelpers
         {
             var edit = new TagBuilder("a") { InnerHtml = "Edit" };
             edit.MergeAttribute("id", "Edit");
-            edit.MergeAttribute("href",$"{controller}/Edit/{item.Id}"); //doesnt work for vendor... weird
+            edit.MergeAttribute("href",$"{controller}/Edit/{item.Id}");
             //edit.MergeAttribute("class", "label-primary badge ");
             edit.MergeAttribute("class", "btn btn-primary");
             string editLink= edit.ToString(TagRenderMode.Normal);

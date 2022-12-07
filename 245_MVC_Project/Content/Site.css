@@ -29,15 +29,15 @@ textarea {
     border-color: #fff
 }
 /*my css below*/
-body {
+/*body {
     min-height: 100vh;
-    background: linear-gradient(to right top,#b6ff00,#00ffff);
+    background: linear-gradient(to right top,#b6ff00,#ff6a00); 
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1;
     position: relative;
-}
+}*/
 
 .textBox {
     background-color: white;
@@ -144,7 +144,7 @@ a.Email {
     background-color: white;
     min-height: stretch;
     /*width: fit-content;*/
-    width:auto;
+    width:inherit;
     background: linear-gradient(to right bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.3));
     border-radius: 40px;
     position: relative;

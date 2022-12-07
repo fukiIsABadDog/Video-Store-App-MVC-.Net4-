@@ -5,13 +5,7 @@
     ViewBag.Title = "Categories";
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
-@*<p>
 
-    @Html.ActionLink("Create Category", "Create", null, new { @class = "btn btn-primary" })
-</p>*@
-
-@* testing out new css *@
-@* This is a good start *@
 
 <section class="myTableBox indexFont">
     <p>
@@ -33,7 +27,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
-                <td class="btn-group">
+                <td>
                     @Html.IndexLinks(item, "Categories")
 
                     @*@Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }, new { @class = "label-primary badge " }) |

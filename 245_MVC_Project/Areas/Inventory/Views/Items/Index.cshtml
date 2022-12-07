@@ -5,31 +5,30 @@
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
-<section class="myTableBox indexFont" style="padding-bottom: 4rem">
+    @*<div class="myTableBox indexFont" style="padding-bottom: 4rem">*@
+<div class="row">
 
-    <p>
+    @Html.ActionLink("Create Item", "Create", null, new { @class = "btn btn-primary btn-lg" }) &nbsp; &nbsp; &nbsp; &nbsp;
 
-        @Html.ActionLink("Create Item", "Create", null, new { @class = "btn btn-primary btn-lg" }) &nbsp; &nbsp; &nbsp; &nbsp;
+    <!--Drop down list category filter -->
+    <label class="filter">Item Tag:</label>&nbsp; &nbsp;
 
-        <!--Drop down list category filter -->
-        <label class="filter">Item Tag:</label>&nbsp; &nbsp;
+    @* CategoryId = Viewbag.CategoryId*@
+    @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "filter", @onchange = "FillByTag()" })
 
-        @* CategoryId = Viewbag.CategoryId  ------------ I give up on trying to find a way to select all as default*@
-        @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "filter", @onchange = "FillByTag()" })
+    @* Holy mother of bacon I might have actually found a solution *@
+    <button class="btn btn-primary" onclick="ResetFilter()">Reset</button>
 
-        @* Holy mother of bacon I might have actually found a solution *@
-        <button class="btn btn-primary"   onclick="ResetFilter()">Reset</button>
+    <!--Search box name filter-->
+    &nbsp;&nbsp;&nbsp;&nbsp;<label class="filter">Search by Item Name:</label>&nbsp;&nbsp;
+    @Html.TextArea("Search", null, htmlAttributes: new { @class = "filter", @onchange = "FilterByName()" })
+</div>
+        <div class="row" id="itemContainer">
 
-        <!--Search box name filter-->
-        &nbsp;&nbsp;&nbsp;&nbsp;<label class="filter">Search by Item Name:</label>&nbsp;&nbsp;
-        @Html.TextArea("Search", null, htmlAttributes: new { @class = "filter", @onchange = "FilterByName()" })
-    </p>
+            @Html.Partial("_Index", Model)
 
-    <div id="itemContainer">
-        @Html.Partial("_Index", Model)
-    </div>
-
-</section>
+        </div>
+    @*</div>*@
 
     @section Scripts{
 
@@ -52,6 +51,4 @@
         container.load('@Url.Action("_IndexByTag")?id=' + 0)
         }
         </script>
-
-
     }

@@ -9,7 +9,7 @@
     <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top ">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -29,20 +29,25 @@
         </div>
     </div>
 
-    <div class="body-content container" >
-        <h1 class="text-muted">@ViewBag.Title</h1>
-       
-            
+    <div class="container body-content" >
+        <div class="row">
+            <h1 class="text-muted">@ViewBag.Title</h1>
+        </div>
+        <div class="row">
             @Html.Partial("_Inventory")
-      
-            @RenderBody()
-     
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year</p>
-            <p>Version: @ViewContext.Controller.GetType().Assembly.GetName().Version</p>
-        </footer>
-    </div>
+        </div>
+
+
+         @RenderBody()
+
+
+
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year</p>
+                <p>Version: @ViewContext.Controller.GetType().Assembly.GetName().Version</p>
+            </footer>
+        </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
