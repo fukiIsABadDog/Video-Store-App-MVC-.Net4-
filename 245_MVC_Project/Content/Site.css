@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    overflow-x:hidden;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -121,17 +122,38 @@ h1 {
 
 #cylinder {
     position: absolute;
-    z-index: 2;
-    top: 10%;
-    right: 10%;
+    z-index: 0;
+    bottom: 25%;
+    right: 35%;
     height: 500px;
 }
 
 #shape {
     position: absolute;
-    z-index: 2;
-    bottom: 5%;
+    z-index: 0;
+    bottom: 15%;
     left: 10%;
+    overflow:hidden
+
+}
+#circle1{
+    position:absolute;
+    z-index:0;
+    top:2.5%;
+    left:12%;   
+}
+#circle2 {
+
+    position: absolute;
+    z-index: 0;
+    bottom: 5%;
+    right: 50%;   
+}
+#circle3 {
+    position: absolute;
+    z-index: 0;
+    bottom: 20%;
+    left: 20%;
 }
 
 /*For Email Class in custom HtmlExtension*/
@@ -159,3 +181,16 @@ a.Email {
     font-size:large;
 }
 
+.itemFormBox {
+    background-color: white;
+    min-height: stretch;
+    width: inherit;
+    background: linear-gradient(to right bottom,rgba(255,255,255,0.4),rgba(255,255,255,0.2));
+    border-radius: 20px;
+    /*position: relative;*/
+    z-index: 3;
+    backdrop-filter: blur(2rem);
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    padding-top: 1rem;
+}

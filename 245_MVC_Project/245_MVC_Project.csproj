@@ -265,8 +265,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="HTML\aboutMe.html" />
     <Content Include="Images\88188-geometry-color-triangle-polygon-symmetry-free-hq-image.png" />
+    <Content Include="Images\background_Shape.png" />
     <Content Include="Images\biopicture.jpg" />
+    <Content Include="Images\Circle.png" />
     <Content Include="Images\Cylinder.png" />
+    <Content Include="Images\dropSplatter.png" />
     <Content Include="Images\shape.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

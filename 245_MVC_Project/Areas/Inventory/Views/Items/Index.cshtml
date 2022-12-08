@@ -7,54 +7,57 @@
 
 
 
-<div class="row myTableBox" style="margin-bottom:1rem">
-
-   
-        <div class="col-sm-4 col-xs-12 " style="margin-bottom:1rem;margin-top:1.5rem;">
-            @Html.ActionLink("Create Item", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
-        </div>
-
-       
-        <div class="col-sm-4 col-xs-6" style="margin-bottom:1rem">
-            <!--Drop down list category filter -->
-
-            <label class="filter">Item Filter</label>
-            @* CategoryId = Viewbag.CategoryId*@
-            @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control filter", @onchange = "FillByTag()" })
-            <button class="btn btn-success btn-xs filter" onclick="ResetFilter()">Reset</button>
-        </div>
-
-  
-        <div class="col-sm-4 col-xs-6" style="margin-bottom:1rem;">
-
-            <label class="filter">Search</label>
-
-            @*@Html.TextArea("Search", null, htmlAttributes: new { @class = "filter", @onchange = "FilterByName()" })*@
-            @Html.TextBox("Search", null, htmlAttributes: new { @class = "form-control filter ", @onchange = "FilterByName()",
-           @placeholder = "Search by Name"
-       })
-            <input class="btn btn-primary btn-xs filter" type="submit" value="Search" />
-            <button class="btn btn-success btn-xs filter" onclick="ResetFilter()">Reset</button>
+<div class="row itemFormBox" style="margin-bottom:1rem">
 
 
+    <div class="col-sm-4 col-xs-12 " style="margin-bottom:1rem;margin-top:1.5rem;">
+        @Html.ActionLink("Create Item", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
+    </div>
 
 
-        </div>
-   
+    <div class="col-sm-4 col-xs-6" style="margin-bottom:1rem">
+        <!--Drop down list category filter -->
+
+        <label class="filter">Item Filter</label>
+        @* CategoryId = Viewbag.CategoryId*@
+        @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control filter", @onchange = "FillByTag()" })
+        <button class="btn btn-primary btn-xs filter" onclick="ResetFilter()">Reset</button>
+    </div>
+
+
+    <div class="col-sm-4 col-xs-6" style="margin-bottom:1rem;">
+
+        <label class="filter">Search</label>
+
+        @*@Html.TextArea("Search", null, htmlAttributes: new { @class = "filter", @onchange = "FilterByName()" })*@
+        @Html.TextBox("Search", null, htmlAttributes: new
+        {
+            @class = "form-control filter ",
+            @onchange = "FilterByName()",
+       @placeholder = "Search by Name"
+   })
+        <input class="btn btn-primary btn-xs filter" type="submit" value="Search" />
+        <button class="btn btn-primary btn-xs filter" onclick="ResetFilter()">Reset</button>
 
 
 
- </div>
-    <div class="row myTableBox" id="itemContainer">
-
-        @Html.Partial("_Index", Model)
 
     </div>
 
 
-    @section Scripts{
 
-        <script type="text/javascript">
+
+</div>
+<div class="row myTableBox" id="itemContainer">
+
+    @Html.Partial("_Index", Model)
+</div>
+
+
+
+@section Scripts{
+
+    <script type="text/javascript">
 
         function FillByTag() {
             var categoryId = $('#CategoryId').val();
@@ -74,5 +77,5 @@
 
         }
 
-        </script>
-    }
+    </script>
+}
