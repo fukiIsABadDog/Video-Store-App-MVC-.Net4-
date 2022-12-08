@@ -5,8 +5,8 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right:20px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -33,7 +33,7 @@ textarea {
 
 body {
     min-height: 100vh;
-    background: linear-gradient(to right top,#b6ff00,#ff6a00); 
+    background: linear-gradient(to right top,blue,#ff6a00); 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,16 +144,16 @@ a.Email {
 
 .myTableBox {
     background-color: white;
-    /*min-height: stretch;
-    width: fit-content;*/
-    background: linear-gradient(to right bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.3));
-    border-radius: 40px;
+    min-height: stretch;
+    width:inherit;
+    background: linear-gradient(to right bottom,rgba(255,255,255,0.8),rgba(255,255,255,0.6));
+    border-radius: 20px;
     /*position: relative;*/
     z-index: 3;
     backdrop-filter: blur(2rem);
-    padding-left: 4rem;
-    padding-right: 4rem;
-    padding-top:4rem;
+    padding-left:0.3rem;
+    padding-right: 0.3rem;
+    padding-top: 1rem;
 }
 .indexFont{
     font-size:large;
