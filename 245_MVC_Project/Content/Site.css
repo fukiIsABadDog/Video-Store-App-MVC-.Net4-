@@ -28,8 +28,10 @@ textarea {
     background-color: #777;
     border-color: #fff
 }
-/*my css below*/
-/*body {
+
+/*--------------------my css below-----------------------------*/
+
+body {
     min-height: 100vh;
     background: linear-gradient(to right top,#b6ff00,#ff6a00); 
     display: flex;
@@ -37,7 +39,7 @@ textarea {
     justify-content: center;
     z-index: 1;
     position: relative;
-}*/
+}
 
 .textBox {
     background-color: white;
@@ -142,17 +144,16 @@ a.Email {
 
 .myTableBox {
     background-color: white;
-    min-height: stretch;
-    /*width: fit-content;*/
-    width:inherit;
+    /*min-height: stretch;
+    width: fit-content;*/
     background: linear-gradient(to right bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.3));
     border-radius: 40px;
-    position: relative;
+    /*position: relative;*/
     z-index: 3;
     backdrop-filter: blur(2rem);
     padding-left: 4rem;
     padding-right: 4rem;
-    
+    padding-top:4rem;
 }
 .indexFont{
     font-size:large;

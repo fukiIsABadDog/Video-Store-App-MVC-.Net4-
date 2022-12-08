@@ -4,40 +4,68 @@
     ViewBag.Title = "Items";
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
+<!--low priority: I may not need all this &nbsp -->
 
-    @*<div class="myTableBox indexFont" style="padding-bottom: 4rem">*@
-<div class="row">
+<div class="myTableBox indexFont" style="padding-bottom: 4rem">
+<div class="row" style="margin-bottom:1rem">
 
-    @Html.ActionLink("Create Item", "Create", null, new { @class = "btn btn-primary btn-lg" }) &nbsp; &nbsp; &nbsp; &nbsp;
+    <div class="col-sm-4 col-xs-6" style="margin-bottom:1rem">
+       
+           
+                @Html.ActionLink("Create Item", "Create", null, new { @class = "btn btn-primary btn-lg align=\"center\""})
+     
+    </div>
 
-    <!--Drop down list category filter -->
-    <label class="filter">Item Tag:</label>&nbsp; &nbsp;
+    <div class="col-sm-4 col-xs-6" style="margin-bottom:1rem">
 
-    @* CategoryId = Viewbag.CategoryId*@
-    @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "filter", @onchange = "FillByTag()" })
+        <span align="center">
+            <!--Drop down list category filter -->
+            <label class="filter ">Item Tag:</label>
 
-    @* Holy mother of bacon I might have actually found a solution *@
-    <button class="btn btn-primary" onclick="ResetFilter()">Reset</button>
+            @* CategoryId = Viewbag.CategoryId*@
+            @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "filter", @onchange = "FillByTag()"  })
+            <button class="btn btn-primary btn-sm filter" onclick="ResetFilter()">Reset</button>
+        </span>
+  
+    </div>
 
-    <!--Search box name filter-->
-    &nbsp;&nbsp;&nbsp;&nbsp;<label class="filter">Search by Item Name:</label>&nbsp;&nbsp;
-    @Html.TextArea("Search", null, htmlAttributes: new { @class = "filter", @onchange = "FilterByName()" })
+    <div class="col-sm-4 col-xs-12" style="margin-right:0.5rem;margin-bottom:1rem">
+
+
+        <label class="filter">Search by Item Name:</label>
+
+        <span align="center">
+            @*@Html.TextArea("Search", null, htmlAttributes: new { @class = "filter", @onchange = "FilterByName()" })*@
+            @Html.TextBox("Search", null, htmlAttributes: new { @class = "filter", @onchange = "FilterByName()" })
+            <input class="btn btn-primary btn-sm filter"type="submit" value="Search" />
+
+        </span>
+
+
+
+    </div>
 </div>
-        <div class="row" id="itemContainer">
 
-            @Html.Partial("_Index", Model)
+<div class="row" id="itemContainer">
 
-        </div>
-    @*</div>*@
+    @Html.Partial("_Index", Model)
 
-    @section Scripts{
+</div>
+</div>
 
-        <script type="text/javascript">
+@section Scripts{
+
+    <script type="text/javascript">
 
         function FillByTag() {
             var categoryId = $('#CategoryId').val();
             var container = $('#itemContainer');
             container.load('@Url.Action("_IndexByTag")?id=' + categoryId)
+        }
+            
+        function ResetFilter() {
+            var container = $('#itemContainer');
+        container.load('@Url.Action("_IndexByTag")?id=' + 0)
         }
 
         function FilterByName() {
@@ -46,9 +74,6 @@
             container.load('@Url.Action("_IndexByName")?parm=' + parm)
 
         }
-        function ResetFilter() {
-            var container = $('#itemContainer');
-        container.load('@Url.Action("_IndexByTag")?id=' + 0)
-        }
-        </script>
-    }
+
+    </script>
+}

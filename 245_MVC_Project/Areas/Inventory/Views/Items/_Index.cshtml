@@ -30,12 +30,22 @@
     {
         
             <tr>
+                <!--Shows images based on device width-->
                 <td class="visible-sm visible-md visible-lg">
+                    <span class="visible-md visible-lg">
 
-                    @if (!string.IsNullOrEmpty(item.ImageLocation))
-                    {
-                        <img src="@Href(item.ImageLocation)" style="width:110px;height:150px;" />
-                    }
+                        @if (!string.IsNullOrEmpty(item.ImageLocation))
+                        {
+                            <img src="@Href(item.ImageLocation)" style="width:110px;height:150px;" />
+                        }
+                    </span>
+                    <span class="visible-sm">
+
+                        @if (!string.IsNullOrEmpty(item.ImageLocation))
+                        {
+                            <img src="@Href(item.ImageLocation)" style="width:55px;height:75px;" />
+                        }
+                    </span>
                 </td>
 
                 <td>

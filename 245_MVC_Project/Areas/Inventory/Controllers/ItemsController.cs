@@ -20,14 +20,14 @@ namespace _245_MVC_Project.Areas.Inventory.Controllers
         // GET: Inventory/Items
         public ActionResult Index()
         {
-            //create object that stores all categories?
+            
             ViewBag.CategoryId = new SelectList(db.Categories.OrderBy(c => c.Name), "CategoryId", "Name");
             
             var items = db.Items.Include(i => i.Category).ToList();
             return View(items);
         }
 
-        //trying to send null id to resent filter
+        
         public ActionResult _IndexByTag(int id)
         {
             db.Configuration.ProxyCreationEnabled = false;
