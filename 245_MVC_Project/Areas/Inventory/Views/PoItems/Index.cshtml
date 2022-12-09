@@ -2,19 +2,19 @@
 @model IEnumerable<ITP245_Model.PoItem>
 
 @{
-    ViewBag.Title = "Purchase Order Items";
+    ViewBag.Title = "PO Items";
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
 
-<div class="row itemFormBox">
+<div class="row itemFormBox indexFont">
     <div class="col-sm-4 col-xs-12" @*style="margin-bottom:1.5rem;margin-top:0.5rem;"*@>
-        @Html.ActionLink("Create PO Item", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
+        @Html.ActionLink("Create PO Item", "Create", null, new { @class = "btn btn-primary btn-lg btn-block indexTableBtns" })
     </div>
 </div>
 
-<div class="row myTableBox">
-    <table class="table table-hover">
+<div class="row myTableBox indexFont">
+    <table class="table">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Quantity)
@@ -34,10 +34,10 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <td class="tableFontMinor">
                     @Html.DisplayFor(modelItem => item.Quantity)
                 </td>
-                <td>
+                <td class= "tableFontMinor">
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
@@ -47,7 +47,7 @@
                     @Html.DisplayFor(modelItem => item.PurchaseOrder.PurchaseOrderNumber)
                 </td>
                 <td>
-                    <div class=" btn-group-vertical btn-group-sm pull-right">
+                    <div class=" btn-group-vertical btn-group-sm pull-right indexTableBtns">
                         @Html.IndexLinks(item, "PoItems")
                     </div>                </td>
             </tr>

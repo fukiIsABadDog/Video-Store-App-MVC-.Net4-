@@ -6,14 +6,14 @@
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row itemFormBox">
+<div class="row itemFormBox indexFont">
     <div class="col-sm-4 col-xs-12" @*style="margin-bottom:1.5rem;margin-top:0.5rem;"*@>
-        @Html.ActionLink("Create Spoilage", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
+        @Html.ActionLink("Create Spoilage", "Create", null, new { @class = "btn btn-primary btn-lg btn-block indexTableBtns" })
     </div>
 </div>
 
-<div class="row myTableBox">
-    <table class="table table-hover table-condensed"style="table-layout: fixed;"">
+<div class="row myTableBox indexFont">
+    <table class="table table-condensed"style="table-layout: fixed">
         <tr>
             <th scope="col">
                 @Html.DisplayNameFor(model => model.Item.Name)
@@ -40,26 +40,25 @@
         {
             <tr>
                 <td>
-                    @Html.ActionLink(item.Item.Name, "Details", "Items", new { area = "Inventory", id = item.ItemId }, null)
+                    @Html.ActionLink(item.Item.Name, "Details", "Items", new { area = "Inventory", id = item.ItemId }, htmlAttributes: new { @class = "indexFont" })
                 </td>
-                <td>
+                <td class="tableFontMinor">
                     @Html.DisplayFor(modelItem => item.ReasonType)
                 </td>
-                <td class="visible-sm visible-md visible-lg">
+                <td class="visible-sm visible-md visible-lg tableFontMinor">
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
-                <td>
+                <td class=" tableFontMinor">
                     @Html.DisplayFor(modelItem => item.SpoilageDate)
                 </td>
-                <td class="text-center">
+                <td class="text-center tableFontMinor">
                     @Html.DisplayFor(modelItem => item.Quantity)
                 </td>
-                <td>
+                <td class="tableFontMinor">
                     @Html.DisplayFor(modelItem => item.Value)
                 </td>
                 <td>
-                    <div class=" btn-group-vertical btn-group-sm pull-right">
-
+                    <div class=" btn-group-vertical btn-group-sm pull-right indexTableBtns">
                         @Html.IndexLinks(item, "Spoilages")
                     </div>
                 </td>

@@ -48,9 +48,18 @@
     <div class="container body-content">
 
 
-        <div class="row">
-            <h1 class="text-muted">@ViewBag.Title</h1>
+        <div class="row visible-md visible-lg">
+            <div class="title-Box-lg">
+                <div class="title-Font-lg">@ViewBag.Title</div>
+            </div>
         </div>
+        <div class="row visible-sm visible-xs">      
+            <div class="title-Box-sm">
+             <div class="title-Font-sm">@ViewBag.Title</div>
+             </div>
+        </div>
+
+
         <div class="row">
             @Html.Partial("_Inventory")
         </div>
