@@ -1,36 +1,30 @@
 ﻿@using _245_MVC_Project.HtmlHelpers
 @model IEnumerable<ITP245_Model.Vendor>
 
-<table class="table">
+<table class="table table-condensed" style="table-layout: fixed;">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
+        <th scope="col">
+            Vendor
+            @*@Html.DisplayNameFor(model => model.Name)*@
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address2)
-        </th>
-        <th>
+        <th scope="col" class="visible-sm visible-md visible-lg">
+            Address
+            @*@Html.DisplayNameFor(model => model.Address1)
             @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.State)
+            @Html.DisplayNameFor(model => model.ZipCode)*@
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ZipCode)
-        </th>
-        <th>
+
+        <th scope="col" class="visible-sm visible-md visible-lg">
             @Html.DisplayNameFor(model => model.PhoneNumber)
         </th>
-        <th>
+        <th scope="col">
             @Html.DisplayNameFor(model => model.Email)
         </th>
-        <th>
+        <th scope="col">
             @Html.DisplayNameFor(model => model.Contact)
         </th>
-        <th></th>
+        <th scope="col"></th>
     </tr>
 
     @foreach (var item in Model)
@@ -39,40 +33,27 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <td>
+            <td class="visible-sm visible-md visible-lg">    
                 @Html.DisplayFor(modelItem => item.Address1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
+                @Html.DisplayFor(modelItem => item.City),
                 @Html.DisplayFor(modelItem => item.State)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.ZipCode)
             </td>
-            <td>
+            <td class="visible-sm visible-md visible-lg">
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
-            <td>
-                @*@Html.DisplayFor(modelItem => item.Email)*@
-                @Html.EmailLink(item);
+            <td>  
+                <div style="max-width:fit-content">
+                    @Html.EmailLink(item)
+                </div>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Contact)
             </td>
             <td>
-                @Html.IndexLinks(item,"Vendors")
-                @* Randomly broke and now is working.... idk whats going on *@
-
-                @*@Html.ActionLink("Edit", "Edit", new { id = item.VendorId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.VendorId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.VendorId })*@
-
-
+                <div class=" btn-group-vertical btn-group-sm pull-right">
+                    @Html.IndexLinks(item, "Vendors")
+                </div>
             </td>
         </tr>
     }

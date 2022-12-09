@@ -5,31 +5,40 @@
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
-<p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" }) &nbsp; &nbsp; &nbsp; &nbsp;
+<div class="row itemFormBox">
+    <div class="col-sm-4 col-xs-12 " style="margin-bottom:1rem;margin-top:1.5rem;">
 
-    <!--Drop down list state filter -->
-    <label class="filter">Vendor Tag:</label>&nbsp; &nbsp;
-    @Html.DropDownList("State", null, htmlAttributes: new { @class = "filter", @onchange = "FillByTag()" })
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" }) &nbsp; &nbsp; &nbsp; &nbsp;
+    </div>
+    <div class="col-sm-4 col-xs-6" style="margin-bottom:1rem">
+        <!--Drop down list state filter -->
+        <label class="filter">Vendor Tag:</label>&nbsp; &nbsp;
+        @Html.DropDownList("State", null, htmlAttributes: new { @class = "form-control filter", @onchange = "FillByTag()" })
+        <button class="btn btn-primary btn-xs filter" onclick="ResetFilter()">Reset</button>
 
-    @* it would be cool to add a clear filter button here later *@
-</p>
+    </div>
+        @* it would be cool to add a clear filter button here later *@
+    </div>
 
-<div id="vendorContainer">
-    @Html.Partial("_Index", Model)
-</div>
+    <div class="row myTableBox indexFont"id="vendorContainer">
+        @Html.Partial("_Index", Model)
+    </div>
 
-@section Scripts{
+    @section Scripts{
 
-    <script type="text/javascript">
+        <script type="text/javascript">
 
         function FillByTag() {
             var state = $('#State').val();
             var container = $('#vendorContainer');
             container.load('@Url.Action("_IndexByTag")?state=' + state)
         }
+            function ResetFilter() {
+            var state = "showAll";
+            var container = $('#vendorContainer');
+            container.load('@Url.Action("_IndexByTag")?state=' + state)
+        }
 
 
-
-    </script>
-}
+        </script>
+    }

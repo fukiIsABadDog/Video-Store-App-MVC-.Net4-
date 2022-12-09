@@ -270,6 +270,8 @@
     <Content Include="Images\Circle.png" />
     <Content Include="Images\Cylinder.png" />
     <Content Include="Images\dropSplatter.png" />
+    <Content Include="Images\galaxyPattern.png" />
+    <Content Include="Images\Particles-PNG-File.png" />
     <Content Include="Images\shape.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

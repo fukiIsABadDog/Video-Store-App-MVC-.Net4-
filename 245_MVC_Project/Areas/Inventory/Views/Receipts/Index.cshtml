@@ -7,50 +7,54 @@
 }
 
 
+<div class="row itemFormBox">
+    <div class="col-sm-4 col-xs-12" @*style="margin-bottom:1.5rem;margin-top:0.5rem;"*@>
+        @Html.ActionLink("Create Receipt", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
+    </div>
+</div>
 
-<p>
-    @Html.ActionLink("Create Receipt", "Create", null, new { @class = "btn btn-primary" })
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Amount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReceiptDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PoItem.PurchaseOrderNumber)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div class="row myTableBox">
+    <table class="table table-hover">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Amount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReceiptDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PoItem.PurchaseOrderNumber)
-            </td>
-            <td>
-                @Html.IndexLinks(item,"Receipts")
-
-                @*@Html.ActionLink("Edit", "Edit", new { id=item.ReceiptId }, new { @class = "label-primary badge " }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.ReceiptId }, new { @class = "label-primary badge " }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.ReceiptId }, new { @class = "label-danger badge " })*@
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiptDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PoItem.PurchaseOrderNumber)
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReceiptDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PoItem.PurchaseOrderNumber)
+                </td>
+
+                <td>
+
+                    <div class=" btn-group-vertical btn-group-sm pull-right">
+                        @Html.IndexLinks(item, "Receipts")
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

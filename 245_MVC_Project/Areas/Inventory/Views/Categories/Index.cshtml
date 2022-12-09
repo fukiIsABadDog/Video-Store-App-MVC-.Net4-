@@ -7,13 +7,14 @@
 }
 
 
-<section class="myTableBox indexFont">
-    <p>
+<div class="row itemFormBox">
+    <div class="col-sm-4 col-xs-12"  @*style="margin-bottom:1.5rem;margin-top:0.5rem;"*@>
+        @Html.ActionLink("Create Category", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
+    </div>
+</div>
 
-        @Html.ActionLink("Create Category", "Create", null, new { @class = "btn btn-primary btn-lg" })
-    </p>
-
-    <table class="table table-hover">
+<div class="row myTableBox">
+    <table class="table table-hover;">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
@@ -28,15 +29,13 @@
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.IndexLinks(item, "Categories")
-
-                    @*@Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }, new { @class = "label-primary badge " }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.CategoryId }, new { @class = "label-primary badge " }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId }, new { @class = "label-danger badge " })*@
+                    <div class=" btn-group-vertical btn-group-sm pull-right">
+                        @Html.IndexLinks(item, "Categories")
+                    </div>
                 </td>
             </tr>
         }
-
     </table>
-</section>
+</div>
+   
 

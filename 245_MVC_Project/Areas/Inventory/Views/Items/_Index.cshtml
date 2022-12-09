@@ -1,7 +1,7 @@
 ﻿@using _245_MVC_Project.HtmlHelpers
 @model IEnumerable<ITP245_Model.Item>
 
-<table class="table table-hover table-condensed"style="table-layout: fixed;">
+<table class="table table-condensed"style="table-layout: fixed;">
     <tr>
         <th scope="col" class="visible-sm visible-md visible-lg">
             Image
@@ -36,14 +36,14 @@
 
                         @if (!string.IsNullOrEmpty(item.ImageLocation))
                         {
-                            <img src="@Href(item.ImageLocation)" style="width:110px;height:150px;" />
+                            <img src="@Href(item.ImageLocation)" class="tableImgsLg" />
                         }
                     </span>
                     <span class="visible-sm">
 
                         @if (!string.IsNullOrEmpty(item.ImageLocation))
                         {
-                            <img src="@Href(item.ImageLocation)" style="width:55px;height:75px;" />
+                            <img src="@Href(item.ImageLocation)" class="tableImgsSm" />
                         }
                     </span>
                 </td>
@@ -51,28 +51,24 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
-                <td>
+                <td class="tableFontMinor">
                     @Html.DisplayFor(modelItem => item.QuantityOnHand)
                 </td>
-                <td>
+                <td class="tableFontMinor">
                     @Html.DisplayFor(modelItem => item.RetailPrice)
                 </td>
-                <td>
+                <td class="tableFontMinor">
                     @Html.DisplayFor(modelItem => item.StandardCost)
                 </td>
-                <td>
+                <td class="tableFontMinor">
                     @*@Html.DisplayFor(modelItem => item.Category.Name)*@
                     @Html.ActionLink(item.Category.Name, "Details", "Categories", new { area = "Inventory", id = item.CategoryId }, null)
                 </td>
 
-                <td>
-                    <div class=" btn-group-vertical btn-group-sm">
+                <td class="indexTableBtns">
+                    <div class=" btn-group-vertical btn-group-sm pull-right">
                         @Html.IndexLinks(item, "Items")
-                    </div>
-                    
-                    @*@Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "label-primary badge " }) |*@
-                    @*@Html.ActionLink("Details", "Details", new { id = item.ItemId }, new { @class = "label-primary badge " }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ItemId }, new { @class = "label-danger badge " })*@
+                    </div>                
                 </td>
             </tr>
      }

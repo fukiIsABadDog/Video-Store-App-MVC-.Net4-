@@ -41,8 +41,7 @@ namespace _245_MVC_Project.Areas.Inventory.Controllers
             {
                 var items = db.Items.Include(i => i.Category).Where(i => i.CategoryId.Equals(id)).ToArray();
                 return PartialView("_Index", items);
-            }
-            
+            }        
         }
 
         public ActionResult _IndexByName(string parm)

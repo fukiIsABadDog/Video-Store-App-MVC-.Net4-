@@ -6,62 +6,65 @@
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
-<p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+<div class="row itemFormBox">
+    <div class="col-sm-4 col-xs-12" @*style="margin-bottom:1.5rem;margin-top:0.5rem;"*@>
+        @Html.ActionLink("Create Spoilage", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
+    </div>
+</div>
 
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReasonType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SpoilageDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Value)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Item.Name)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div class="row myTableBox">
+    <table class="table table-hover table-condensed"style="table-layout: fixed;"">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReasonType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SpoilageDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Value)
-            </td>
-            <td>
-                @*@Html.DisplayFor(modelItem => item.Item.Name)*@
-                @Html.ActionLink(item.Item.Name, "Details", "Items", new { area = "Inventory", id = item.ItemId }, null)
-            </td>
-            <td class="btn">
-                @Html.IndexLinks(item,"Spoilages")
-                @*@Html.ActionLink("Edit", "Edit", new { id = item.SpoilageId }, new { @class = "label-primary badge " }) |
-                @Html.ActionLink("Details", "Details", new { id = item.SpoilageId }, new { @class = "label-primary badge " }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.SpoilageId }, new { @class = "label-danger badge " })*@
-            </td>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Item.Name)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.ReasonType)
+            </th>
+            <th scope="col" class="visible-sm visible-md visible-lg">
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.SpoilageDate)
+            </th>
+            <th scope="col" class="text-center">
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Value)
+            </th>
+            <th scope="col"></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(item.Item.Name, "Details", "Items", new { area = "Inventory", id = item.ItemId }, null)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReasonType)
+                </td>
+                <td class="visible-sm visible-md visible-lg">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SpoilageDate)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+                <td>
+                    <div class=" btn-group-vertical btn-group-sm pull-right">
+
+                        @Html.IndexLinks(item, "Spoilages")
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

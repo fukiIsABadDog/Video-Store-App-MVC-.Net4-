@@ -26,14 +26,18 @@ namespace _245_MVC_Project.Areas.Inventory.Controllers
         // returns vendors by state partial view
         public ActionResult _IndexByTag(string state)
         {
-        //    db.Configuration.ProxyCreationEnabled = false; // what does this do exactly?
-        //    var vendorsByState = db.Vendors.Select(x => x).Where(v =>v.State == state).ToArray();
-        //    return PartialView("_Index", vendorsByState);
-
             db.Configuration.ProxyCreationEnabled = false;
-            var vendors= db.Vendors.Select(v => v).Where(v => v.State.Equals(state)).ToArray();
-            return PartialView("_Index", vendors);
 
+            if (state == "showAll")
+            {
+                var allVendors = db.Vendors.Select(v => v).ToArray();
+                return PartialView("_Index",allVendors);
+            }
+            else
+            {
+                var vendors = db.Vendors.Select(v => v).Where(v => v.State.Equals(state)).ToArray();
+                return PartialView("_Index", vendors);
+            }        
         }
 
         // GET: Inventory/Vendors/Details/5
