@@ -153,3 +153,7 @@
 		
 
 }
+12/5 --> 12/10{
+
+			fixed over all style of site
+}
