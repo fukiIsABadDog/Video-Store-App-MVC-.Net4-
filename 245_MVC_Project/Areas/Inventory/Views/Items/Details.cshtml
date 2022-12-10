@@ -6,90 +6,95 @@
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
+<div class="row itemFormBox indexFont">
+    <div class="col-sm-4 col-xs-12 " style="margin-bottom:1rem;margin-top:1.5rem;">
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-block indexTableBtns" })
+    </div>
+</div>
+<section class=" row myTableBox indexFont">
+            <div class="subTitle" style="padding-left:2rem">Details</div>
+            <hr />
+            <dl class="dl-horizontal col-xs-12 col-md-6">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
 
-<section class="myTableBox">
-        <div class="container">
-            <div class="row">
-                <h2>Details</h2>
-                <hr />
-                <dl class="dl-horizontal col-xs-12 col-md-6">
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Name)
-                    </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.Name)
-                    </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Description)
-                    </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.Description)
-                    </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.QuantityOnHand)
+                </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.QuantityOnHand)
-                    </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.QuantityOnHand)
+                </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.QuantityOnHand)
-                    </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.RetailPrice)
+                </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.RetailPrice)
-                    </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.RetailPrice)
+                </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.RetailPrice)
-                    </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.StandardCost)
+                </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.StandardCost)
-                    </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.StandardCost)
+                </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.StandardCost)
-                    </dd>
+                <dt class="hidden">
+                    @Html.DisplayNameFor(model => model.ImageLocation)
+                </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.ImageLocation)
-                    </dt>
+                <dd class="hidden">
+                    @Html.DisplayFor(model => model.ImageLocation)
+                </dd>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.ImageLocation)
-                    </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Category.Name)
+                </dt>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Category.Name)
-                    </dt>
+                <dd>
+                    @Html.ActionLink(Model.Category.Name, "Details", "Categories", new { area = "Inventory", id = Model.CategoryId }, htmlAttributes: new { @class = "indexFont" })
+                    <hr/> 
+                </dd>
+           
+                <dt>
+                    Options
+                </dt>
+                <dd>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.ItemId }, new { @class = "btn btn-warning btn-sm btn-block indexTableBtns" })
 
-                    <dd>
-                        @Html.ActionLink(Model.Category.Name, "Details", "Categories", new { area = "Inventory", id = Model.CategoryId }, null)
-                        @*@Html.DisplayFor(model => model.Category.Name)*@
-                    </dd>
+                </dd>
 
-                </dl>
+                
+            </dl>
 
-                <div class="col-xs-12 col-md-6" style="padding-bottom:1rem">
+            <div class="col-xs-12 col-md-6" style="padding-bottom:1rem">
 
 
-                    @if (!string.IsNullOrEmpty(Model.ImageLocation))
-                    {
-                        <img src="@Href(Model.ImageLocation)" style="width:220px;height:300px;" />
-                    }
-                    else
-                    {
-                        <img id="item_image" style="width: 220px; height: 300px; border:none;" />
-                    }
+                @if (!string.IsNullOrEmpty(Model.ImageLocation))
+                {
+                    <img src="@Href(Model.ImageLocation)" class="subIndexImg center-block"/>
+                }
+                else
+                {
+                    <img id="item_image" style="width: 220px; height: 300px; border:none;" />
+                }
 
-                </div>
             </div>
-        </div>
-        <p>
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            @Html.ActionLink("Edit", "Edit", new { id = Model.ItemId }, new { @class = "btn btn-warning" })
 
-        </p>
 </section>

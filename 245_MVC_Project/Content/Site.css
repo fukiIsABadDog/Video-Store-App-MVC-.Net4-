@@ -222,7 +222,7 @@ a.Email {
     background-color: white;
     min-height: stretch;
     width:inherit;
-    background: linear-gradient(to right bottom,rgba(255,255,255,0.1),rgba(255,255,255,0.05));
+    background: linear-gradient(to right bottom,rgba(255,255,255,0.25),rgba(255,255,255,0.2));
     border-radius: 20px;
     /*position: relative;*/
     z-index: 3;
@@ -246,7 +246,7 @@ a.Email {
     background-color: white;
     min-height: stretch;
     width: inherit;
-    background: linear-gradient(to right bottom,rgba(255,255,255,0.1),rgba(255,255,255,0.05));
+    background: linear-gradient(to right bottom,rgba(255,255,255,0.1),rgba(255,255,255,0.5));
     border-radius: 20px;
     /*position: relative;*/
     z-index: 3;
@@ -257,6 +257,14 @@ a.Email {
     padding-bottom: 1rem;
     margin-bottom: 2rem;
 }
+
+.subIndexImg {
+    width: 300px;
+    height: 400px;
+    border-radius: 4px;
+    opacity: 0.95;
+}
+
 .card-img{
     border-radius:10px;
     z-index:1;

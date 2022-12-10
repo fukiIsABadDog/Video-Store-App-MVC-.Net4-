@@ -6,15 +6,21 @@
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
+<div class="row itemFormBox indexFont">
+    <div class="col-sm-4 col-xs-12 " style="margin-bottom:1rem;margin-top:1.5rem;">
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-block btn-block indexTableBtns" })
+    </div>
+</div>
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <div class="form-horizontal">
+
+<div class="row itemFormBox indexFont">
+    <div class="form-horizontal container">
         @Html.HiddenFor(model => model.VendorId)
         @Html.Partial("_CreateEdit", Model)
     </div>
-}
-<div>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
 </div>
+}
 

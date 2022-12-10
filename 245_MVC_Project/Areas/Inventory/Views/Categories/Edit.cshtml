@@ -13,12 +13,14 @@
         </div>
     </div>
 @using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+    {
+        @Html.AntiForgeryToken()
 
     <div class="row myTableBox indexFont">
-        @Html.HiddenFor(model => model.CategoryId)
-        @Html.Partial("_CreateEdit", Model)
+        <div class="form-horizontal container">
+            @Html.HiddenFor(model => model.CategoryId)
+            @Html.Partial("_CreateEdit", Model)
+        </div>
     </div>
 }
 
