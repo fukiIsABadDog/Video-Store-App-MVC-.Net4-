@@ -7,73 +7,81 @@
 }
 
 <div>
-    <h2 class=" text-danger">@ViewBag.Subtitle</h2>
+    <div class="row itemFormBox indexFont">
+        <div class="col-sm-4 col-xs-12 " style="margin-bottom:1rem;margin-top:1.5rem;">
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-block btn-block indexTableBtns" })
+        </div>
+    </div>
 
-    <h4 class=" text-danger">Are you sure you want to delete this?</h4>
-</div>
+    <div class="row myTableBox indexFont" style="margin-bottom: 2rem;">
+        <div class="subTitle" style="margin-left:2rem;">@ViewBag.Subtitle</div>
+        <hr />
+        <dl class="dl-horizontal col-xs-6">
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
+            <dt> Warning</dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
+            <dd class="alert-danger">
+                Are you sure you want to delete this?
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ReasonType)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ReasonType)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ReasonType)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ReasonType)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SpoilageDate)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.SpoilageDate)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.SpoilageDate)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Value)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SpoilageDate)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Value)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Value)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Item.Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Value)
+            </dd>
 
-        <dd class=" alert-danger">
-            @*@Html.DisplayFor(model => model.Item.Name)*@
-            @Html.ActionLink(Model.Item.Name, "Details", "Items", new { area = "Inventory", id = Model.ItemId }, null)
+            <dt>
+                @Html.DisplayNameFor(model => model.Item.Name)
+            </dt>
 
-        </dd>
+            <dd>
+                @*@Html.DisplayFor(model => model.Item.Name)*@
+                @Html.ActionLink(Model.Item.Name, "Details", "Items", new { area = "Inventory", id = Model.ItemId }, htmlAttributes: new {@class="indexFont"})
+                <hr />
+            </dd>
+            <dt>
+                Options
+            </dt>
+            <dd>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <input type="submit" value="Delete" class="btn btn-danger btn-sm btn-block indexTableBtns" />
+                }
+            </dd>
 
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-<div class="form-actions no-color">
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="submit" value="Delete" class="btn btn-danger" />
-
-</div>
-    }
-</div>
+        </dl>
+    </div>

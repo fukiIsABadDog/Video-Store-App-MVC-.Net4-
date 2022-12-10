@@ -54,11 +54,8 @@ textarea {
 
 .textBox {
     background-color: white;
-    min-height: 80vh;
-    width: 100vh;
     background: linear-gradient(to right bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.3));
     border-radius: 40px;
-    position: relative;
     z-index: 3;
     backdrop-filter: blur(2rem)
 }
@@ -77,18 +74,19 @@ textarea {
 
 .pic {
     object-fit: cover;
-    height: 125px;
-    width: 125px;
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
     position: relative;
     padding: 1rem;
+    opacity:0.9;
 }
 
 .banner {
-    display: flex;
+ /*   display: flex;
     flex-direction: row;
     align-content: center;
-    text-align: center;
+    text-align: center;*/
     background: linear-gradient(to right bottom, rgba(255,255,255,0.6),rgba(255,255,255,0.2));
     border-radius: inherit;
 }
@@ -298,4 +296,9 @@ a.Email {
     font-size: 5rem;
     color: white;
     opacity: 0.4;
+}
+.subTitle2{
+    font-size: 7rem;
+    color: white;
+    opacity: 0.8;
 }

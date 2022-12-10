@@ -5,12 +5,23 @@
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    
+
+
+<div class="row itemFormBox indexFont">
+    <div class="col-sm-4 col-xs-12 " style="margin-bottom:1rem;margin-top:1.5rem;">
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-block btn-block indexTableBtns" })
+    </div>
+</div>
+
+<div class="row myTableBox indexFont" style="margin-bottom: 2rem;">
+
+    <div class="subTitle" style="margin-left:2rem;">Details</div>
     <hr />
-    <dl class="dl-horizontal">
+
+
+    <dl class="dl-horizontal col-xs-6">
+
         <dt>
             @Html.DisplayNameFor(model => model.PurchaseOrderNumber)
         </dt>
@@ -39,15 +50,18 @@
 
         <dd>
             @*@Html.DisplayFor(model => model.Vendor.Name)*@
-            @Html.ActionLink(Model.Vendor.Name, "Details", "Vendors", new { area = "Inventory", id = Model.VendorId }, null)
-
+            @Html.ActionLink(Model.Vendor.Name, "Details", "Vendors", new { area = "Inventory", id = Model.VendorId }, htmlAttributes: new {@class="indexFont"})
+            <hr />
+        </dd>
+        
+        <dt>
+            Options
+        </dt>
+        <dd>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.PurchaseOrderNumber }, new { @class = "btn btn-warning btn-sm btn-block indexTableBtn" })
         </dd>
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PurchaseOrderNumber }, new { @class = "btn btn-warning" })
-
-    
-</p>
+        
+   

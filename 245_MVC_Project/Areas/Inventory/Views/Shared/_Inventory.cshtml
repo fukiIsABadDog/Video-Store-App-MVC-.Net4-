@@ -1,5 +1,5 @@
 ﻿
-<section>@* we might want to make an #id for this css*@
+<section>
 
 
     <nav class="navbar navbar-inverse"style=" border-radius: 2rem;opacity:0.75;">
@@ -8,10 +8,10 @@
                 @Html.ActionLink("Inventory Home", "Index", new { area = "Inventory", controller = "InventoryHome" }, new { @class = "navbar-brand" })
             </li>
             <li>
-                @Html.ActionLink("Items", "Index", new { area = "Inventory", controller = "Items" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Categories", "Index", new { area = "Inventory", controller = "Categories" }, new { @class = "navbar-brand" })
             </li>
             <li>
-                @Html.ActionLink("Categories", "Index", new { area = "Inventory", controller = "Categories" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Items", "Index", new { area = "Inventory", controller = "Items" }, new { @class = "navbar-brand" })
             </li>
             <li>
                 @Html.ActionLink("PO Items", "Index", new { area = "Inventory", controller = "PoItems" }, new { @class = "navbar-brand" })

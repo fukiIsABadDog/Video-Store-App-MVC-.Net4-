@@ -9,12 +9,11 @@
 
 <div class="row itemFormBox indexFont">
     <div class="col-sm-4 col-xs-12 " style="margin-bottom:1rem;margin-top:1.5rem;">
-        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-block btn-block indexTableBtns" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-block indexTableBtns" })
     </div>
 </div>
 
 <div class="row myTableBox indexFont" style="margin-bottom: 2rem;">
-
     <div class="subTitle" style="margin-left:2rem;">Details</div>
     <hr />
     <dl class="dl-horizontal col-xs-6">
@@ -33,10 +32,8 @@
             Options
         </dt>
         <dd>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId }, new { @class = "btn btn-warning btn-sm btn-block indexTableBtn" })
-            
+            @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId }, new { @class = "btn btn-warning btn-sm btn-block indexTableBtns" })     
         </dd>
-
     </dl>
     <div class="col-xs-6">
 
@@ -54,12 +51,8 @@
             <tr>
                 <td>
                     @Html.ActionLink(i.Name, "Details", "Items", new { area = "Inventory", id = i.Id }, htmlAttributes: new {@class= "indexFont"})
-
-
                 </td>
-
             </tr>
         }
     </table>
-
 </div>

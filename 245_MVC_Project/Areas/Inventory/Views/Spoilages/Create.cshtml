@@ -7,15 +7,19 @@
 }
 
 
-@using (Html.BeginForm()) 
+<div class="row itemFormBox indexFont">
+    <div class="col-sm-4 col-xs-12 " style="margin-bottom:1rem;margin-top:1.5rem;">
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-block btn-block indexTableBtns" })
+    </div>
+</div>
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    @Html.Partial("_CreateEdit", Model)
-</div>
+    <div class="row myTableBox indexFont">
+        <div class="form-horizontal container">
+            @Html.Partial("_CreateEdit", Model)
+        </div>
+    </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
-</div>

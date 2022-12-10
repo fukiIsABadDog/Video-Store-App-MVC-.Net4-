@@ -6,27 +6,30 @@
     Layout = "~/Areas/Inventory/Views/Shared/_Layout.cshtml";
 }
 
+<div class="row itemFormBox indexFont">
+    <div class="col-sm-4 col-xs-12 " style="margin-bottom:1rem;margin-top:1.5rem;">
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-block btn-block indexTableBtns" })
+    </div>
+</div>
+
+
 @using (Html.BeginForm("Create", "Items", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    <section class="myTableBox">
+    <section class="row myTableBox indexFont">
         <div class="form-horizontal container">
             @Html.Partial("_CreateEdit", Model)
         </div>
-        
-        <div>
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
-        </div>
     </section>
 }
-        <script type="text/javascript">
-            function show(input) {
-                if (input.files && input.files[0]) {
-                    var filedr = new FileReader(e);
-                    filedr.onload = function (e) {
-                        $('#item_image').attr('src', e.target.result);
-                    }
-                    filedr.readAsDataURL(inputfiles[0]);
-                }
+<script type="text/javascript">
+    function show(input) {
+        if (input.files && input.files[0]) {
+            var filedr = new FileReader(e);
+            filedr.onload = function (e) {
+                $('#item_image').attr('src', e.target.result);
             }
-        </script>
+            filedr.readAsDataURL(inputfiles[0]);
+        }
+    }
+</script>
